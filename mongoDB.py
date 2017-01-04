@@ -29,6 +29,7 @@ result = db.restaurants.insert_one(
         ],
         "name": "Vella",
         "restaurant_id": "41704620"
+
     }
 )
 
@@ -44,7 +45,8 @@ print(db.restaurants.isCapped())
 
 # Capped Collection
 
-# client.test.createCollection('capped_collection', { capped: true, size: 4096, max:100 })
+# client.test.createCollection('capped_collection', { capped: true, size: 4096,
+# max:100 })
 # capped_col = client.capped_collection
 # capped_col.insert_one(
 #     {

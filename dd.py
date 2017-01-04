@@ -12,7 +12,7 @@ def draw_number(file_name, number):
     font = ImageFont.truetype('Arial.ttf', 140)
 
     draw = ImageDraw.Draw(image)
-    draw.text(pos, number, fill=(255,0,0), font=font)
+    draw.text(pos, number, fill=(250, 0, 0), font=font)
 
     image.show()
 
