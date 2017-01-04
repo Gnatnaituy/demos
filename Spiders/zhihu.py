@@ -5,10 +5,10 @@ import configparser
 def create_session():
     cf = configparser.ConfigParser()
     cf.read('config.ini')
-    cookies = cf.items('cookies')
-    cookies = dict(cookies)
+    cookies = cf.items('cookie')
+    cookies = dict(cookie)
     from pprint import pprint
-    pprint(cookies)
+    pprint(cookie)
     email = cf.get('info', 'email')
     password = cf.get('info', 'password')
 
