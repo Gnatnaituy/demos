@@ -45,4 +45,4 @@ if __name__ == '__main__':
     Duotai_classss_instance = Duotaiclassss('Jobs', '50', '70', 'Python')
     introduce(classss_instance)
     introduce(Duotai_classss_instance)
-        
+
