@@ -24,6 +24,7 @@ class classss(object):
 class Backendclassss(classss):
 
     def __init__(self, name, age, weight, language):
+        super().__init__()
         self.language = language
 
 # 多态
