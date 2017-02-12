@@ -3,7 +3,7 @@ from flask import Flask, request, url_for, send_from_directory
 from werkzeug import secure_filename
 
 
-ALLOWED_EXTENSIONS=set(['txt', 'jpg', 'jpeg', 'gif', 'png', 'pdf'])
+ALLOWED_EXTENSIONS = {'txt', 'jpg', 'jpeg', 'gif', 'png', 'pdf'}
 MAX_CONTENT_LENGTH = 16 * 1024 * 1024
 
 

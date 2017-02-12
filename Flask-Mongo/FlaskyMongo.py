@@ -25,7 +25,7 @@ def addMachine():
         })
         return jsonify(status='OK', message='inserted successfully')
 
-    except Exception, e:
+    except Exception as e:
         return jsonify(status='ERROR', message=str(e))
 
 
@@ -48,7 +48,7 @@ def getMachine():
             'id': str(machine['_id'])
         }
         return json.dumps(machineDetail)
-    except Exception, e:
+    except Exception as e:
         return str(e)
 
 
@@ -67,7 +67,7 @@ def updateMachine():
                                'device': device, 'ip': ip, 'username': username,
                             'password': password, 'port': port}})
         return jsonify(status='OK', message='updated successfully')
-    except Exception, e:
+    except Exception as e:
         return jsonify(status='ERROR', message=str(e))
 
 
@@ -78,7 +78,7 @@ def getMachineList():
 
         machineList = []
         for machine in machines:
-            print machine
+            print(machine)
             machineItem = {
                 'device': machine['device'],
                 'ip': machine['ip'],
@@ -88,7 +88,7 @@ def getMachineList():
                 'id': str(machine['_id'])
             }
             machineList.append(machineItem)
-    except Exception, e:
+    except Exception as e:
         return str(e)
     return json.dumps(machineList)
 
@@ -113,8 +113,8 @@ def execute():
                 resp = run(command)
 
         return jsonify(status='OK', message=resp)
-    except Exception, e:
-        print 'Error is ' + str(e)
+    except Exception as e:
+        print('Error is ' + str(e))
         return jsonify(status='ERROR', message=str(e))
 
 
@@ -124,7 +124,7 @@ def deleteMachine():
         machineId = request.json['id']
         db.Machines.remove({'_id': ObjectId(machineId)})
         return jsonify(status='OK', message='deletion successful')
-    except Exception, e:
+    except Exception as e:
         return jsonify(status='ERROR', message=str(e))
 
 
