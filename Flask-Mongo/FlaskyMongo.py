@@ -65,7 +65,7 @@ def updateMachine():
 
         db.Machines.update_one({'_id': ObjectId(machineId)}, {'$set': {
                                'device': device, 'ip': ip, 'username': username,
-                            'password': password, 'port': port}})
+                               'password': password, 'port': port}})
         return jsonify(status='OK', message='updated successfully')
     except Exception as e:
         return jsonify(status='ERROR', message=str(e))

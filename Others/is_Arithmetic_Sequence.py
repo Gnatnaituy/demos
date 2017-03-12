@@ -7,8 +7,9 @@ def isArithmetic(*a):
     a1 = min(a)
     d = 2*(float(sum(a))/n-a1)/(n-1)
 
-    for i in range (n):
-        if (a1 + i*d) not in a:return False
+    for i in range(n):
+        if (a1 + i*d) not in a:
+            return False
     return True
 
 if __name__ == '__main__':
