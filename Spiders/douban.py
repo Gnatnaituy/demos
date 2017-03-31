@@ -56,7 +56,7 @@ connect = pymysql.connect(
     database='spiders', charset='utf8'
 )
 sql = 'insert into `douban_books`(`title`, `author`, `price`, `category`, `rating`, \
-      `eveluate_nums`, `desc`) values (%s,%s,%s,%s,%s,%s,%s)'
+      `eveluate_nums`, `description`) values (%s,%s,%s,%s,%s,%s,%s)'
 
 
 if __name__ == '__main__':
