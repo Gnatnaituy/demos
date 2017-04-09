@@ -1,0 +1,2070 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>云计算及其应用-物联网应用技术数字化学习平台</title>
+<link rel="stylesheet" type="text/css" href="/public/home/css/szh.css"><!-- Bootstrap core CSS -->
+<link rel="stylesheet" type="text/css" href="/public/home/css/style-all.css">
+<script src="/public/home/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="/public/home/js/photo-info.js" type="text/javascript"></script>
+<script type="text/javascript" src="/public/ckplayer/ckplayer.js" charset="utf-8"></script>
+<script language="javascript" src="/public/js/jquery.form-3.36.0.min.js"></script>
+<!--um富文本编辑器插件-->
+<link href="/public/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" charset="utf-8" src="/public/umeditor/umeditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/public/umeditor/umeditor.min.js"></script>
+<script type="text/javascript" src="/public/umeditor/lang/zh-cn/zh-cn.js"></script>
+<!--显示公式的时候需要引用-->
+<link href="/public/umeditor/third-party/mathquill/mathquill.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/public/umeditor/third-party/mathquill/mathquill.min.js"></script>
+<!--弹出框插件-->
+<link href="/public/artDialog/css/ui-dialog.css" rel="stylesheet">
+<script src="/public/artDialog/dist/dialog-plus.js"></script>
+
+<script src="/public/home/js/bootstrap.min.js"></script>
+<script src="/public/home/js/height.js"></script>
+<!--音乐播放器插件-->
+<link href="/public/jPlayer/skin/blue.monday/css/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/public/home/css/course.css">
+<link rel="stylesheet" href="/public/home/css/style.css" />
+</head>
+
+<body>
+<div class="box_full top_cou">
+	<div class="main_top">
+			<div class="right_top nav_cou">
+			<a href="/portal/coursecontent/coursenotice/id/421.html">课程公告</a>
+            <a href="/portal/coursecontent/index/id/421.html" class="active_cou">课程内容</a>
+            <a href="/portal/coursework/index/id/421.html">作业</a>
+            <a href="/portal/courseexam/index/id/421.html">考试</a>
+            <a href="/portal/coursecontent/courseDiscuss/id/421.html">讨论区</a>
+            <a href="/portal/coursecontent/courseproblem/id/421.html">答疑</a>
+            <a href="/portal/coursecontent/coursenote/id/421.html">笔记</a>
+            <a href="/portal/courseprogress/index/id/421.html">学习档案</a>
+		</div>	</div>
+	<div class="left_top">
+		<span>云计算及其应用</span>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="box_full middle_cou">
+	
+	<div class="main_cou" style="margin-right:0px;">
+		<div id="right_cou" class="right_cou" class="c-menu c-menu--slide-right" style="display:none;">
+		    <button id="quxiao" onclick="qx()" class="c-menu__close">&nbsp;</button>
+			<script>
+				function qx(){
+					$("#right_cou").hide(300);
+					$("#jiaoliu").show();
+				}
+			</script>
+			<ul id="myTab" class="nav nav-tabs-c">
+				<li  class="active"><a href="#taolun" data-toggle="tab"><img src="/public/home/images/cou_taolun.gif" />讨论区</a></li>
+				<li><a href="#tiwen" data-toggle="tab"><img src="/public/home/images/cou_tiwen.gif" />答疑</a></li>
+				<li><a href="#biji" data-toggle="tab"><img src="/public/home/images/cou_biji.gif" />笔记</a></li>
+			</ul>
+			<!--conent开始-->
+			<div id="myTabContent" class="tab-content">
+			<!--讨论开始-->
+			<div class="tab-pane fade in active" id="taolun">
+				<form id="discuss_form" method="post">				
+				<input type="hidden" name="courseid"  id="courseid" value="421" />
+				<input type="hidden" name="treeid"  id="treeidtaolun" value="14250" />
+				<input type="hidden" name="fromid" id="fromid" value="0"/>
+				<div class="cou_tared">
+				<textarea name="content" id="content" rows="4" style="height:120px;"></textarea>
+				</div>
+				<div class="cou_bottom">
+					<input name="tijiao" type="button" class="cou_btn" value="发&nbsp;布" onClick="javascript:return discusCreateItem();" />
+					<!--div class="cou_zishu"><span class="cou_zishu_now">18</span>&nbsp;/&nbsp;150</div-->
+				</div>
+				</form>
+				<div class="cou_taol_uli" id="discusslookbox">
+														
+				</div>
+			</div><!--讨论结束-->
+			
+			<!--答疑开始-->
+			<div class="tab-pane fade " id="tiwen">
+					<form id="problem_form" method="post">
+						<div class="cou_tarec">
+						<input type="text" id="title" name="title" class="btn-question" placeholder="问题标题显示在这里？" />
+						</div>
+						<input name="courseid"  type="hidden" value="421"/>
+						<input name="teacherid" type="hidden" value="12594"/>
+						<textarea name="problemcontent" id="problemcontent" rows="4" class="cou_tarea" placeholder="请输入你要提问的问题？" style="height:120px;"></textarea>					
+						<div class="cou_bottom">
+							<input name="tijiao" type="button"  class="cou_btn" value="发&nbsp;布" onClick="javascript:return problemCreateItem();"/>						
+							
+						</div>
+					</form>
+						<div class="cou_taol_uli height-tiwen" id="problem">
+							
+						</div>
+				
+			</div><!--答疑结束-->
+			
+			
+			<!--笔记开始-->
+			<div class="tab-pane fade" id="biji">
+					 <form id="discuss_forma" method="post">
+						<input type="hidden" id="treeid" name="treeid" value="14250" />
+						<input type="hidden" name="courseid" value="421" />
+						<input type="hidden" name="fromid" id="fromid2" value="0"/>
+						<div class="cou_taree">
+						<textarea name="content" id="editorid"   style=" height:120px;" class="cou_tarea" placeholder="请输入你要记载的笔记"></textarea>
+						</div>
+						<div class="cou_bottom">
+							<!--私有-截取当前-->
+							<input name="tijiao" type="button"  class="cou_btn" value="发&nbsp;布" onClick="javascript:return noteCreateItem();" />
+						
+						<!-- <div class="cou_zishu"><span class="cou_zishu_now" id="change">18</span>&nbsp;/&nbsp;150</div>-->
+						</div>
+					 </form>
+						<div class="cou_taol_uli" id="notelookbox">
+							
+						</div>	
+			
+			</div><!--笔记结束-->
+			
+			</div><!--tab-content结束-->	
+		</div>
+	    <div class="left_cou" style="margin-right:0;">
+			<div class="midd_cou_top">
+				<a href="javascript:logouta()" class="fhui_cou">返回</a>
+				<span class="danq_cou">6.1 桌面云</span>
+				<div id="o-wrapper" class="o-wrapper">
+					<div class="o-content">
+						<button id="c-button--slide-right" class="c-button">目录</button><!--显示按钮-->
+						<nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">		
+							<button class="c-menu__close">&nbsp;</button><!--移除按钮-->
+							<div class="c-menu__items" id="scroll_main" style="display: inline-block;">
+							<!-----------------------------------三折-开始-->
+								<script src="/public/home/js/sanzhe.js"></script>
+								<div id="san_menu">
+								   								   								   								   <!--h1开始——章——鼠标滑过——右侧操作显示-->
+								   <div class="xxo_relative xxo_zhj_bg">
+								   <h1 onClick="javascript:ShowMenu(this,0)"><a href="javascript:void(0)" class="ke" title="第一章 认识虚拟化与云计算"> 
+										第一章 认识虚拟化与云计算</a></a>
+										<img class="jiantou" src="/public/home/images/xxo_zhanga.png" width="19" height="19" />
+								   </h1>
+								   </div>
+								   <!--h1结束-->
+								   <span class="">
+									 <!--h2开始——节-正常状态下显示-->
+									 									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第1节 虚拟化的基本概念" id="scroll_14019">
+										  										 <a href="/portal/coursecontent/index/treeid/14019/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第1节 虚拟化的基本概念</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14231/id/421.html'" href="#" class=""><h4 title="1.1 虚拟化" id="scroll_14231">1.1 虚拟化</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14232/id/421.html'" href="#" class=""><h4 title="1.2 多任务" id="scroll_14232">1.2 多任务</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14233/id/421.html'" href="#" class=""><h4 title="1.3 超线程技术" id="scroll_14233">1.3 超线程技术</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第2节 Vmware workstation软件的基本使用" id="scroll_14020">
+										  										 <a href="/portal/coursecontent/index/treeid/14020/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第2节 Vmware workstation软件的基本使用</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14234/id/421.html'" href="#" class=""><h4 title="2.1 vmare workstation软件安装" id="scroll_14234">2.1 vmare workstation软件安装</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14235/id/421.html'" href="#" class=""><h4 title="2.2 虚拟机工具栏按钮说明 " id="scroll_14235">2.2 虚拟机工具栏按钮说明 </h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14236/id/421.html'" href="#" class=""><h4 title="2.3 虚拟机硬件配置选项卡" id="scroll_14236">2.3 虚拟机硬件配置选项卡</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14237/id/421.html'" href="#" class=""><h4 title="2.4 vmware Options选项卡中各项参数与配置 " id="scroll_14237">2.4 vmware Options选项卡中各项参数与配置 </h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第3节 虚拟机的高级应用" id="scroll_14021">
+										  										 <a href="/portal/coursecontent/index/treeid/14021/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第3节 虚拟机的高级应用</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14238/id/421.html'" href="#" class=""><h4 title="3.1 使用休眠与恢复方式" id="scroll_14238">3.1 使用休眠与恢复方式</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14239/id/421.html'" href="#" class=""><h4 title="3.2 虚拟机显示控制" id="scroll_14239">3.2 虚拟机显示控制</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14240/id/421.html'" href="#" class=""><h4 title="3.3 使用WinVNC客户端连接/控制正在运行的虚拟机" id="scroll_14240">3.3 使用WinVNC客户端连接/控制正在运行的虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14241/id/421.html'" href="#" class=""><h4 title="3.4 加密、解密虚拟机" id="scroll_14241">3.4 加密、解密虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14242/id/421.html'" href="#" class=""><h4 title="3.5 使用主机物理硬盘作为虚拟硬盘" id="scroll_14242">3.5 使用主机物理硬盘作为虚拟硬盘</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第4节 在主机与虚拟机之间传送数据 " id="scroll_14022">
+										  										 <a href="/portal/coursecontent/index/treeid/14022/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第4节 在主机与虚拟机之间传送数据 </a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14243/id/421.html'" href="#" class=""><h4 title="4.1 使用拖动方式" id="scroll_14243">4.1 使用拖动方式</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14244/id/421.html'" href="#" class=""><h4 title="4.2 使用复制、粘贴方式" id="scroll_14244">4.2 使用复制、粘贴方式</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14245/id/421.html'" href="#" class=""><h4 title="4.3 使用共享文件夹" id="scroll_14245">4.3 使用共享文件夹</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第5节 快照管理与虚拟机的克隆" id="scroll_14023">
+										  										 <a href="/portal/coursecontent/index/treeid/14023/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第5节 快照管理与虚拟机的克隆</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14246/id/421.html'" href="#" class=""><h4 title="5.1 创建快照" id="scroll_14246">5.1 创建快照</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14247/id/421.html'" href="#" class=""><h4 title="5.2 从快照点克隆虚拟机" id="scroll_14247">5.2 从快照点克隆虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14248/id/421.html'" href="#" class=""><h4 title="5.3 删除无用快照以释放磁盘空间" id="scroll_14248">5.3 删除无用快照以释放磁盘空间</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14249/id/421.html'" href="#" class=""><h4 title="5.4 使用自动保护功能创建快照" id="scroll_14249">5.4 使用自动保护功能创建快照</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第6节 云计算的基本概念" id="scroll_14024">
+										  										 <a href="/portal/coursecontent/index/treeid/14024/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第6节 云计算的基本概念</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14250/id/421.html'" href="#" class="cou_active"><h4 title="6.1 桌面云" id="scroll_14250">6.1 桌面云</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-a.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14251/id/421.html'" href="#" class=""><h4 title="6.2 并行计算" id="scroll_14251">6.2 并行计算</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14252/id/421.html'" href="#" class=""><h4 title="6.3 分布式计算" id="scroll_14252">6.3 分布式计算</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14253/id/421.html'" href="#" class=""><h4 title="6.4 网格计算" id="scroll_14253">6.4 网格计算</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14254/id/421.html'" href="#" class=""><h4 title="6.5 云计算" id="scroll_14254">6.5 云计算</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第7节 云计算的服务模式" id="scroll_14025">
+										  										 <a href="/portal/coursecontent/index/treeid/14025/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第7节 云计算的服务模式</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14255/id/421.html'" href="#" class=""><h4 title="7.1 IaaS" id="scroll_14255">7.1 IaaS</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14256/id/421.html'" href="#" class=""><h4 title="7.2 PaaS" id="scroll_14256">7.2 PaaS</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14257/id/421.html'" href="#" class=""><h4 title="7.3 SaaS" id="scroll_14257">7.3 SaaS</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14258/id/421.html'" href="#" class=""><h4 title="7.4 云安全" id="scroll_14258">7.4 云安全</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第8节 公有云的基本应用" id="scroll_14026">
+										  										 <a href="/portal/coursecontent/index/treeid/14026/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第8节 公有云的基本应用</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14259/id/421.html'" href="#" class=""><h4 title="8.1 新浪云注册" id="scroll_14259">8.1 新浪云注册</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14260/id/421.html'" href="#" class=""><h4 title="8.2 新浪云应用" id="scroll_14260">8.2 新浪云应用</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14261/id/421.html'" href="#" class=""><h4 title="8.3 阿里云注册" id="scroll_14261">8.3 阿里云注册</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14262/id/421.html'" href="#" class=""><h4 title="8.4 阿里云应用" id="scroll_14262">8.4 阿里云应用</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  								   </span>
+																   								   <!--h1开始——章——鼠标滑过——右侧操作显示-->
+								   <div class="xxo_relative xxo_zhj_bg">
+								   <h1 onClick="javascript:ShowMenu(this,1)"><a href="javascript:void(0)" class="ke" title="第二章 数据中心构建"> 
+										第二章 数据中心构建</a></a>
+										<img class="jiantou" src="/public/home/images/xxo_zhanga.png" width="19" height="19" />
+								   </h1>
+								   </div>
+								   <!--h1结束-->
+								   <span class="">
+									 <!--h2开始——节-正常状态下显示-->
+									 									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第1节 数据中心服务器认知与选型" id="scroll_14051">
+										  										 <a href="/portal/coursecontent/index/treeid/14051/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第1节 数据中心服务器认知与选型</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14263/id/421.html'" href="#" class=""><h4 title="1.1 台式服务器认知" id="scroll_14263">1.1 台式服务器认知</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14264/id/421.html'" href="#" class=""><h4 title="1.2 台式服务器选型" id="scroll_14264">1.2 台式服务器选型</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14265/id/421.html'" href="#" class=""><h4 title="1.3 机架式服务器认知" id="scroll_14265">1.3 机架式服务器认知</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14266/id/421.html'" href="#" class=""><h4 title="1.4 机架式服务器选型" id="scroll_14266">1.4 机架式服务器选型</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14267/id/421.html'" href="#" class=""><h4 title="1.5 刀片式服务器认知" id="scroll_14267">1.5 刀片式服务器认知</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14268/id/421.html'" href="#" class=""><h4 title="1.6 刀片式服务器选型" id="scroll_14268">1.6 刀片式服务器选型</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第2节 windows服务器操作系统安装" id="scroll_14052">
+										  										 <a href="/portal/coursecontent/index/treeid/14052/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第2节 windows服务器操作系统安装</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14269/id/421.html'" href="#" class=""><h4 title="2.1 windows vmware虚拟机创建" id="scroll_14269">2.1 windows vmware虚拟机创建</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14270/id/421.html'" href="#" class=""><h4 title="2.2 windows vmware虚拟机安装前准备" id="scroll_14270">2.2 windows vmware虚拟机安装前准备</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14271/id/421.html'" href="#" class=""><h4 title="2.3 windows vmware虚拟机安装" id="scroll_14271">2.3 windows vmware虚拟机安装</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14272/id/421.html'" href="#" class=""><h4 title="2.4 windows系统安装后操作" id="scroll_14272">2.4 windows系统安装后操作</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第3节 linux服务器操作系统安装" id="scroll_14053">
+										  										 <a href="/portal/coursecontent/index/treeid/14053/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第3节 linux服务器操作系统安装</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14273/id/421.html'" href="#" class=""><h4 title="3.1 linux vmware虚拟机创建" id="scroll_14273">3.1 linux vmware虚拟机创建</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14274/id/421.html'" href="#" class=""><h4 title="3.2 linux vmware虚拟机安装前准备" id="scroll_14274">3.2 linux vmware虚拟机安装前准备</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14275/id/421.html'" href="#" class=""><h4 title="3.3 linux vmware虚拟机安装" id="scroll_14275">3.3 linux vmware虚拟机安装</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14276/id/421.html'" href="#" class=""><h4 title="3.4 linux 系统安装后操作" id="scroll_14276">3.4 linux 系统安装后操作</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第4节 windows服务器磁盘管理" id="scroll_14054">
+										  										 <a href="/portal/coursecontent/index/treeid/14054/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第4节 windows服务器磁盘管理</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14277/id/421.html'" href="#" class=""><h4 title="4.1 windows操作系统分区管理" id="scroll_14277">4.1 windows操作系统分区管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14278/id/421.html'" href="#" class=""><h4 title="4.2 windows操作系统磁盘配额" id="scroll_14278">4.2 windows操作系统磁盘配额</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14279/id/421.html'" href="#" class=""><h4 title="4.3 windows操作系统简单卷管理" id="scroll_14279">4.3 windows操作系统简单卷管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14280/id/421.html'" href="#" class=""><h4 title="4.4 windows操作系统跨区卷管理" id="scroll_14280">4.4 windows操作系统跨区卷管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14282/id/421.html'" href="#" class=""><h4 title="4.5 windows操作系统带区卷管理" id="scroll_14282">4.5 windows操作系统带区卷管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14283/id/421.html'" href="#" class=""><h4 title="4.6 windows操作系统镜像卷管理" id="scroll_14283">4.6 windows操作系统镜像卷管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14284/id/421.html'" href="#" class=""><h4 title="4.7 windows操作系统RAID5卷管理" id="scroll_14284">4.7 windows操作系统RAID5卷管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第5节 linux操作系统基本磁盘管理" id="scroll_14055">
+										  										 <a href="/portal/coursecontent/index/treeid/14055/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第5节 linux操作系统基本磁盘管理</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14281/id/421.html'" href="#" class=""><h4 title="5.1 linux操作系统分区管理" id="scroll_14281">5.1 linux操作系统分区管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14285/id/421.html'" href="#" class=""><h4 title="5.2 linux操作系统RAID创建与管理" id="scroll_14285">5.2 linux操作系统RAID创建与管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第6节 linux操作系统高级磁盘管理" id="scroll_14056">
+										  										 <a href="/portal/coursecontent/index/treeid/14056/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第6节 linux操作系统高级磁盘管理</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14286/id/421.html'" href="#" class=""><h4 title="6.1 linux操作系统LVM管理" id="scroll_14286">6.1 linux操作系统LVM管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14287/id/421.html'" href="#" class=""><h4 title="6.2 linux操作系统磁盘配额" id="scroll_14287">6.2 linux操作系统磁盘配额</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第7节 openfiler虚拟存储平台基本配置" id="scroll_14057">
+										  										 <a href="/portal/coursecontent/index/treeid/14057/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第7节 openfiler虚拟存储平台基本配置</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14288/id/421.html'" href="#" class=""><h4 title="7.1 openfiler存储平台安装" id="scroll_14288">7.1 openfiler存储平台安装</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14289/id/421.html'" href="#" class=""><h4 title="7.2 openfiler存储平台简单配置" id="scroll_14289">7.2 openfiler存储平台简单配置</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第8节 openfiler虚拟存储平台高级配置" id="scroll_14058">
+										  										 <a href="/portal/coursecontent/index/treeid/14058/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第8节 openfiler虚拟存储平台高级配置</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14290/id/421.html'" href="#" class=""><h4 title="8.1 使用openfiler搭建NAS存储" id="scroll_14290">8.1 使用openfiler搭建NAS存储</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14291/id/421.html'" href="#" class=""><h4 title="8.2 使用openfiler搭建SAN存储" id="scroll_14291">8.2 使用openfiler搭建SAN存储</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  								   </span>
+																   								   <!--h1开始——章——鼠标滑过——右侧操作显示-->
+								   <div class="xxo_relative xxo_zhj_bg">
+								   <h1 onClick="javascript:ShowMenu(this,2)"><a href="javascript:void(0)" class="ke" title="第三章 VMware私有云搭建"> 
+										第三章 VMware私有云搭建</a></a>
+										<img class="jiantou" src="/public/home/images/xxo_zhanga.png" width="19" height="19" />
+								   </h1>
+								   </div>
+								   <!--h1结束-->
+								   <span class="">
+									 <!--h2开始——节-正常状态下显示-->
+									 									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第1节 vSphere平台中的基本概念 " id="scroll_14084">
+										  										 <a href="/portal/coursecontent/index/treeid/14084/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第1节 vSphere平台中的基本概念 </a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14292/id/421.html'" href="#" class=""><h4 title="1.1 vSphere" id="scroll_14292">1.1 vSphere</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14293/id/421.html'" href="#" class=""><h4 title="1.2 vCenter" id="scroll_14293">1.2 vCenter</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14294/id/421.html'" href="#" class=""><h4 title="1.3 vNetwork分布式交换机" id="scroll_14294">1.3 vNetwork分布式交换机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14295/id/421.html'" href="#" class=""><h4 title="1.4 迁移" id="scroll_14295">1.4 迁移</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14296/id/421.html'" href="#" class=""><h4 title="1.5 vApp" id="scroll_14296">1.5 vApp</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14297/id/421.html'" href="#" class=""><h4 title="1.6 FT" id="scroll_14297">1.6 FT</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14298/id/421.html'" href="#" class=""><h4 title="1.7 集群" id="scroll_14298">1.7 集群</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14299/id/421.html'" href="#" class=""><h4 title="1.8 ESXi主机" id="scroll_14299">1.8 ESXi主机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14300/id/421.html'" href="#" class=""><h4 title="1.9 模板" id="scroll_14300">1.9 模板</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14301/id/421.html'" href="#" class=""><h4 title="1.10 克隆" id="scroll_14301">1.10 克隆</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第2节 虚拟基础架构的网络规划与部署" id="scroll_14085">
+										  										 <a href="/portal/coursecontent/index/treeid/14085/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第2节 虚拟基础架构的网络规划与部署</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14302/id/421.html'" href="#" class=""><h4 title="2.1 虚拟基础架构网络规划" id="scroll_14302">2.1 虚拟基础架构网络规划</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14303/id/421.html'" href="#" class=""><h4 title="2.2 虚拟基础架构部署" id="scroll_14303">2.2 虚拟基础架构部署</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第3节 VMware ESXi 5的安装" id="scroll_14086">
+										  										 <a href="/portal/coursecontent/index/treeid/14086/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第3节 VMware ESXi 5的安装</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14304/id/421.html'" href="#" class=""><h4 title="3.1 VMware ESXi的虚拟机创建" id="scroll_14304">3.1 VMware ESXi的虚拟机创建</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14305/id/421.html'" href="#" class=""><h4 title="3.2 在虚拟机中安装VMware ESXi 5" id="scroll_14305">3.2 在虚拟机中安装VMware ESXi 5</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第4节 VMware ESXi 5控制台设置" id="scroll_14087">
+										  										 <a href="/portal/coursecontent/index/treeid/14087/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第4节 VMware ESXi 5控制台设置</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14306/id/421.html'" href="#" class=""><h4 title="4.1 进入控制台界面" id="scroll_14306">4.1 进入控制台界面</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14307/id/421.html'" href="#" class=""><h4 title="4.2 修改管理员口令" id="scroll_14307">4.2 修改管理员口令</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14308/id/421.html'" href="#" class=""><h4 title="4.3 配置管理网络" id="scroll_14308">4.3 配置管理网络</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14309/id/421.html'" href="#" class=""><h4 title="4.4 启用ESXi Shell与SSH" id="scroll_14309">4.4 启用ESXi Shell与SSH</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14310/id/421.html'" href="#" class=""><h4 title="4.5 VMware ESXi的关闭与重启" id="scroll_14310">4.5 VMware ESXi的关闭与重启</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第5节 vSphere Client的安装与配置" id="scroll_14088">
+										  										 <a href="/portal/coursecontent/index/treeid/14088/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第5节 vSphere Client的安装与配置</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14311/id/421.html'" href="#" class=""><h4 title="5.1 vSphere Client的安装" id="scroll_14311">5.1 vSphere Client的安装</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14312/id/421.html'" href="#" class=""><h4 title="5.2 使用vSphere Client登录ESXi" id="scroll_14312">5.2 使用vSphere Client登录ESXi</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第6节 在VMware ESXi中配置虚拟机" id="scroll_14089">
+										  										 <a href="/portal/coursecontent/index/treeid/14089/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第6节 在VMware ESXi中配置虚拟机</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14313/id/421.html'" href="#" class=""><h4 title="6.1 创建虚拟机" id="scroll_14313">6.1 创建虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14314/id/421.html'" href="#" class=""><h4 title="6.2 升级虚拟硬件" id="scroll_14314">6.2 升级虚拟硬件</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14315/id/421.html'" href="#" class=""><h4 title="6.3 修改虚拟机的配置" id="scroll_14315">6.3 修改虚拟机的配置</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14316/id/421.html'" href="#" class=""><h4 title="6.4 在虚拟机中安装操作系统" id="scroll_14316">6.4 在虚拟机中安装操作系统</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14317/id/421.html'" href="#" class=""><h4 title="6.5 快照管理" id="scroll_14317">6.5 快照管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第7节 管理VMware ESXi" id="scroll_14090">
+										  										 <a href="/portal/coursecontent/index/treeid/14090/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第7节 管理VMware ESXi</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14318/id/421.html'" href="#" class=""><h4 title="7.1 查看虚拟机的状态" id="scroll_14318">7.1 查看虚拟机的状态</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14319/id/421.html'" href="#" class=""><h4 title="7.2 管理VMware ESXi本地存储器" id="scroll_14319">7.2 管理VMware ESXi本地存储器</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14320/id/421.html'" href="#" class=""><h4 title="7.3 为VMware ESXi服务器时间配置" id="scroll_14320">7.3 为VMware ESXi服务器时间配置</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第8节 为VMware ESXi配置iSCSI存储" id="scroll_14091">
+										  										 <a href="/portal/coursecontent/index/treeid/14091/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第8节 为VMware ESXi配置iSCSI存储</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14321/id/421.html'" href="#" class=""><h4 title="8.1 在VMware ESXi中添加启用VMotion功能" id="scroll_14321">8.1 在VMware ESXi中添加启用VMotion功能</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14322/id/421.html'" href="#" class=""><h4 title="8.2 添加iSCSI存储" id="scroll_14322">8.2 添加iSCSI存储</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14323/id/421.html'" href="#" class=""><h4 title="8.3 扩充iSCSI分配的卷的容量" id="scroll_14323">8.3 扩充iSCSI分配的卷的容量</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14324/id/421.html'" href="#" class=""><h4 title="8.4 让虚拟机直接使用LUN磁盘" id="scroll_14324">8.4 让虚拟机直接使用LUN磁盘</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第9节 VMware vCenter Server的安装准备" id="scroll_14092">
+										  										 <a href="/portal/coursecontent/index/treeid/14092/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第9节 VMware vCenter Server的安装准备</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14325/id/421.html'" href="#" class=""><h4 title="9.1 为vCenter Server准备虚拟机" id="scroll_14325">9.1 为vCenter Server准备虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14326/id/421.html'" href="#" class=""><h4 title="9.2 安装vCenter Single Sign On" id="scroll_14326">9.2 安装vCenter Single Sign On</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14327/id/421.html'" href="#" class=""><h4 title="9.3 安装vCenter Inventory Service" id="scroll_14327">9.3 安装vCenter Inventory Service</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第10节 VMware vCenter Server的安装准备与配置" id="scroll_14093">
+										  										 <a href="/portal/coursecontent/index/treeid/14093/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第10节 VMware vCenter Server的安装准备与配置</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14328/id/421.html'" href="#" class=""><h4 title="10.1 安装vCenter Server" id="scroll_14328">10.1 安装vCenter Server</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14329/id/421.html'" href="#" class=""><h4 title="10.2 创建数据中心" id="scroll_14329">10.2 创建数据中心</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第11节 虚拟机模板与克隆" id="scroll_14094">
+										  										 <a href="/portal/coursecontent/index/treeid/14094/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第11节 虚拟机模板与克隆</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14330/id/421.html'" href="#" class=""><h4 title="11.1 创建Windows 2003 R2模板虚拟机" id="scroll_14330">11.1 创建Windows 2003 R2模板虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14331/id/421.html'" href="#" class=""><h4 title="11.2 创建其他模板虚拟机" id="scroll_14331">11.2 创建其他模板虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14332/id/421.html'" href="#" class=""><h4 title="11.3 将虚拟机转化为模板" id="scroll_14332">11.3 将虚拟机转化为模板</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14333/id/421.html'" href="#" class=""><h4 title="11.4 从模板部署虚拟机" id="scroll_14333">11.4 从模板部署虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第12节 迁移虚拟机" id="scroll_14095">
+										  										 <a href="/portal/coursecontent/index/treeid/14095/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第12节 迁移虚拟机</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14334/id/421.html'" href="#" class=""><h4 title="12.1 冷迁移虚拟机" id="scroll_14334">12.1 冷迁移虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14335/id/421.html'" href="#" class=""><h4 title="12.2 使用VMotion热迁移虚拟机" id="scroll_14335">12.2 使用VMotion热迁移虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第13节 VMware vCenter Converter应用" id="scroll_14096">
+										  										 <a href="/portal/coursecontent/index/treeid/14096/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第13节 VMware vCenter Converter应用</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14336/id/421.html'" href="#" class=""><h4 title="13.1 Converter Standalone的安装" id="scroll_14336">13.1 Converter Standalone的安装</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14337/id/421.html'" href="#" class=""><h4 title="13.2 转换物理计算机或虚拟机" id="scroll_14337">13.2 转换物理计算机或虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14338/id/421.html'" href="#" class=""><h4 title="13.3 重新配置VMware虚拟机" id="scroll_14338">13.3 重新配置VMware虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第14节 创建和使用VMware HA群集" id="scroll_14097">
+										  										 <a href="/portal/coursecontent/index/treeid/14097/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第14节 创建和使用VMware HA群集</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14339/id/421.html'" href="#" class=""><h4 title="14.1 创建 VMware HA 群集" id="scroll_14339">14.1 创建 VMware HA 群集</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14340/id/421.html'" href="#" class=""><h4 title="14.2 向群集中添加主机" id="scroll_14340">14.2 向群集中添加主机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14341/id/421.html'" href="#" class=""><h4 title="14.3 在群集中迁移虚拟机" id="scroll_14341">14.3 在群集中迁移虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14342/id/421.html'" href="#" class=""><h4 title="14.4 检查HA群集的可用性" id="scroll_14342">14.4 检查HA群集的可用性</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第15节 启用Fault Tolerance准备" id="scroll_14098">
+										  										 <a href="/portal/coursecontent/index/treeid/14098/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第15节 启用Fault Tolerance准备</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14343/id/421.html'" href="#" class=""><h4 title="15.1 为容错准备群集和主机" id="scroll_14343">15.1 为容错准备群集和主机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14344/id/421.html'" href="#" class=""><h4 title="15.2 为VMware ESXi主机配置网络" id="scroll_14344">15.2 为VMware ESXi主机配置网络</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第16节 为虚拟机提供Fault Tolerance" id="scroll_14099">
+										  										 <a href="/portal/coursecontent/index/treeid/14099/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第16节 为虚拟机提供Fault Tolerance</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14345/id/421.html'" href="#" class=""><h4 title="16.1 为虚拟机启用FT功能" id="scroll_14345">16.1 为虚拟机启用FT功能</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14346/id/421.html'" href="#" class=""><h4 title="16.2 为VMware ESXi主机配置系统日志记录" id="scroll_14346">16.2 为VMware ESXi主机配置系统日志记录</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14347/id/421.html'" href="#" class=""><h4 title="16.3 启动启用FT功能的虚拟机" id="scroll_14347">16.3 启动启用FT功能的虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第17节 安装View Connection服务器" id="scroll_14100">
+										  										 <a href="/portal/coursecontent/index/treeid/14100/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第17节 安装View Connection服务器</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14348/id/421.html'" href="#" class=""><h4 title="17.1 准备View Connection虚拟机" id="scroll_14348">17.1 准备View Connection虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14349/id/421.html'" href="#" class=""><h4 title="17.2 安装View Connection Server" id="scroll_14349">17.2 安装View Connection Server</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第18节 安装View Composer Server的准备" id="scroll_14101">
+										  										 <a href="/portal/coursecontent/index/treeid/14101/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第18节 安装View Composer Server的准备</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14350/id/421.html'" href="#" class=""><h4 title="18.1 安装带管理工具的SQL Server Express" id="scroll_14350">18.1 安装带管理工具的SQL Server Express</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14351/id/421.html'" href="#" class=""><h4 title="18.2 为View Composer创建数据库" id="scroll_14351">18.2 为View Composer创建数据库</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14352/id/421.html'" href="#" class=""><h4 title="18.3 在数据源中添加DSN连接" id="scroll_14352">18.3 在数据源中添加DSN连接</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第19节 安装View Composer Server" id="scroll_14102">
+										  										 <a href="/portal/coursecontent/index/treeid/14102/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第19节 安装View Composer Server</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14353/id/421.html'" href="#" class=""><h4 title="19.1 为View准备View Composer组件" id="scroll_14353">19.1 为View准备View Composer组件</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14354/id/421.html'" href="#" class=""><h4 title="19.2 配置View Connection和Composer" id="scroll_14354">19.2 配置View Connection和Composer</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第20节 创建View桌面池" id="scroll_14103">
+										  										 <a href="/portal/coursecontent/index/treeid/14103/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第20节 创建View桌面池</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14355/id/421.html'" href="#" class=""><h4 title="20.1 创建链接克隆的虚拟机自动池" id="scroll_14355">20.1 创建链接克隆的虚拟机自动池</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14356/id/421.html'" href="#" class=""><h4 title="20.2 向桌面池添加用户" id="scroll_14356">20.2 向桌面池添加用户</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14357/id/421.html'" href="#" class=""><h4 title="20.3 查看部署状态" id="scroll_14357">20.3 查看部署状态</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第21节 测试VMware Horizon View桌面" id="scroll_14104">
+										  										 <a href="/portal/coursecontent/index/treeid/14104/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第21节 测试VMware Horizon View桌面</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14358/id/421.html'" href="#" class=""><h4 title="21.1 安装VMware Horizon View" id="scroll_14358">21.1 安装VMware Horizon View</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14359/id/421.html'" href="#" class=""><h4 title="21.2 配置VMware Horizon View" id="scroll_14359">21.2 配置VMware Horizon View</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14360/id/421.html'" href="#" class=""><h4 title="21.3 使用VMware View桌面" id="scroll_14360">21.3 使用VMware View桌面</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第22节 配置View HTML Access访问" id="scroll_14105">
+										  										 <a href="/portal/coursecontent/index/treeid/14105/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第22节 配置View HTML Access访问</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14361/id/421.html'" href="#" class=""><h4 title="22.1 View Connection上安装HTML访问插件" id="scroll_14361">22.1 View Connection上安装HTML访问插件</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14362/id/421.html'" href="#" class=""><h4 title="22.2 为HTML访问准备父虚拟机" id="scroll_14362">22.2 为HTML访问准备父虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14363/id/421.html'" href="#" class=""><h4 title="22.3 更改虚拟机池中的父虚拟机或快照" id="scroll_14363">22.3 更改虚拟机池中的父虚拟机或快照</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14364/id/421.html'" href="#" class=""><h4 title="22.4 重构池中虚拟机" id="scroll_14364">22.4 重构池中虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14365/id/421.html'" href="#" class=""><h4 title="22.5 以HTML方式使用VMware View桌面" id="scroll_14365">22.5 以HTML方式使用VMware View桌面</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  								   </span>
+																   								   <!--h1开始——章——鼠标滑过——右侧操作显示-->
+								   <div class="xxo_relative xxo_zhj_bg">
+								   <h1 onClick="javascript:ShowMenu(this,3)"><a href="javascript:void(0)" class="ke" title="第四章 OpenStack云平台搭建与管理"> 
+										第四章 OpenStack云平台搭建与管理</a></a>
+										<img class="jiantou" src="/public/home/images/xxo_zhanga.png" width="19" height="19" />
+								   </h1>
+								   </div>
+								   <!--h1结束-->
+								   <span class="">
+									 <!--h2开始——节-正常状态下显示-->
+									 									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第1节 linux基本管理与应用" id="scroll_14138">
+										  										 <a href="/portal/coursecontent/index/treeid/14138/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第1节 linux基本管理与应用</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14367/id/421.html'" href="#" class=""><h4 title="1.1 linux网络配置与管理" id="scroll_14367">1.1 linux网络配置与管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14368/id/421.html'" href="#" class=""><h4 title="1.2 linux rpm包的安装与管理" id="scroll_14368">1.2 linux rpm包的安装与管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14369/id/421.html'" href="#" class=""><h4 title="1.3 linux yum的配置与管理" id="scroll_14369">1.3 linux yum的配置与管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第2节 ssh服务器的配置与管理" id="scroll_14139">
+										  										 <a href="/portal/coursecontent/index/treeid/14139/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第2节 ssh服务器的配置与管理</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14370/id/421.html'" href="#" class=""><h4 title="2.1 ssh服务器的安装与配置" id="scroll_14370">2.1 ssh服务器的安装与配置</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14371/id/421.html'" href="#" class=""><h4 title="2.2 ssh服务器的管理" id="scroll_14371">2.2 ssh服务器的管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第3节 linux pxe自动部署服务器搭建" id="scroll_14140">
+										  										 <a href="/portal/coursecontent/index/treeid/14140/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第3节 linux pxe自动部署服务器搭建</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14372/id/421.html'" href="#" class=""><h4 title="3.1 tftp服务器安装与配置" id="scroll_14372">3.1 tftp服务器安装与配置</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14373/id/421.html'" href="#" class=""><h4 title="3.2 dhcp服务器安装与配置" id="scroll_14373">3.2 dhcp服务器安装与配置</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第4节 linux pxe自动部署应答准备" id="scroll_14141">
+										  										 <a href="/portal/coursecontent/index/treeid/14141/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第4节 linux pxe自动部署应答准备</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14374/id/421.html'" href="#" class=""><h4 title="4.1 配置NFS服务器" id="scroll_14374">4.1 配置NFS服务器</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14375/id/421.html'" href="#" class=""><h4 title="4.2 配置kickstart" id="scroll_14375">4.2 配置kickstart</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第5节 linux pxe自动部署过程" id="scroll_14142">
+										  										 <a href="/portal/coursecontent/index/treeid/14142/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第5节 linux pxe自动部署过程</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14376/id/421.html'" href="#" class=""><h4 title="5.1 配置支持pxe" id="scroll_14376">5.1 配置支持pxe</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14377/id/421.html'" href="#" class=""><h4 title="5.2 linux服务器自动安装" id="scroll_14377">5.2 linux服务器自动安装</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第6节 openstack的安装" id="scroll_14143">
+										  										 <a href="/portal/coursecontent/index/treeid/14143/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第6节 openstack的安装</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14378/id/421.html'" href="#" class=""><h4 title="6.1 安装环境搭建" id="scroll_14378">6.1 安装环境搭建</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14379/id/421.html'" href="#" class=""><h4 title="6.2 架构部署" id="scroll_14379">6.2 架构部署</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14380/id/421.html'" href="#" class=""><h4 title="6.3 安装准备" id="scroll_14380">6.3 安装准备</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14381/id/421.html'" href="#" class=""><h4 title="6.4 安装云平台软件" id="scroll_14381">6.4 安装云平台软件</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第7节 创建虚拟机" id="scroll_14144">
+										  										 <a href="/portal/coursecontent/index/treeid/14144/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第7节 创建虚拟机</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14382/id/421.html'" href="#" class=""><h4 title="7.1 查看云系统的各服务状态" id="scroll_14382">7.1 查看云系统的各服务状态</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14383/id/421.html'" href="#" class=""><h4 title="7.2 为系统租户创建网络" id="scroll_14383">7.2 为系统租户创建网络</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14384/id/421.html'" href="#" class=""><h4 title="7.3 创建虚拟机镜像" id="scroll_14384">7.3 创建虚拟机镜像</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第8节 虚拟机镜像管理" id="scroll_14145">
+										  										 <a href="/portal/coursecontent/index/treeid/14145/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第8节 虚拟机镜像管理</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14385/id/421.html'" href="#" class=""><h4 title="8.1 上传镜像" id="scroll_14385">8.1 上传镜像</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14386/id/421.html'" href="#" class=""><h4 title="8.2 查看镜像" id="scroll_14386">8.2 查看镜像</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第9节 虚拟机安全管理" id="scroll_14146">
+										  										 <a href="/portal/coursecontent/index/treeid/14146/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第9节 虚拟机安全管理</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14387/id/421.html'" href="#" class=""><h4 title="9.1 查看flavor" id="scroll_14387">9.1 查看flavor</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14388/id/421.html'" href="#" class=""><h4 title="9.2 创建管理秘钥" id="scroll_14388">9.2 创建管理秘钥</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14389/id/421.html'" href="#" class=""><h4 title="9.3 创建安全组及防火墙规则" id="scroll_14389">9.3 创建安全组及防火墙规则</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  									 									 <div class="xxo_relative ">
+										 <h2 onClick="javascript:void(0)" title="第10节 虚拟机管理" id="scroll_14147">
+										  										 <a href="/portal/coursecontent/index/treeid/14147/id/421.html">
+										 <img src="/public/home/images/xxo_zhangc.png" width="19" height="19" /> 
+										 第10节 虚拟机管理</a></h2>
+										 <!--节-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 
+									 </div>
+									 <!--h2结束-->
+									  <ul class="">
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14390/id/421.html'" href="#" class=""><h4 title="10.1 创建虚拟机" id="scroll_14390">10.1 创建虚拟机</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14391/id/421.html'" href="#" class=""><h4 title="10.2 虚拟机安装" id="scroll_14391">10.2 虚拟机安装</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																																								 <li onclick="location.href='/portal/coursecontent/index/treeid/14392/id/421.html'" href="#" class=""><h4 title="10.3 虚拟机管理" id="scroll_14392">10.3 虚拟机管理</h4>
+										 <!--知识点-学习状态-->
+										 										 <div class="yixue"><a href="#"><img src="/public/home/images/zhangjie-b.png"></a></div>
+										 										 </li>
+																				 <div class="xxo_fff"><img src="/public/home/images/xxo_zhangd.png" width="19" height="19"></div>
+									  </ul>
+									  								   </span>
+								   
+								</div>  
+								<!-------------------------------三折-结束-->
+							</div>
+						</nav><!-- /c-menu slide-right -->
+						<button class="c-button" id="jiaoliu" onclick="xs()">交流</button>
+						<script>
+						    function xs(){
+								$("#right_cou").show(300);
+								$("#jiaoliu").hide();
+							}
+						    
+						</script>
+						
+					</div><!-- /o-content -->
+				
+				</div><!-- /o-wrapper -->
+				
+				<div id="c-mask"></div><!-- /遮罩层 不能删除  原本的样式为.c-mask-->
+				
+				<!-- menus script -->
+				<script src="/public/home/js/menu.js"></script>
+				<script>
+				  var slideRight = new Menu({
+					wrapper: '#o-wrapper',				
+					type: 'slide-right',
+					menuOpenerClass: '.c-button'   //显示
+				  });
+				
+				  var slideRightBtn = document.querySelector('#c-button--slide-right');
+				  
+				  /* function loadcataloguetree(){
+						$("#c-button--slide-right").click();
+				  }loadcataloguetree(); */
+					
+				  slideRightBtn.addEventListener('click', function(e) {
+					e.preventDefault;
+					slideRight.open();
+				  });
+				</script>
+				<!-- /EXTERNAL SCRIPTS -->					
+			</div>
+			
+			<div class="midd_cou_uli"><!--当前状态显示区别css名称 是否 有"_h"-->
+															<a href="/portal/coursecontent/index/treeid/14250/lessonid/13535/id/421.html" title="KC11010104-l02-桌面云" class="cou_4_h renwu_fj xueguo_col">&nbsp;<div class="renwu_bj" style="display:none;">&nbsp;</div></a>
+												<a href="/portal/coursecontent/index/treeid/14250/lessonid/13534/id/421.html" title="KC11010104-l01-桌面云" class="cou_8 renwu_fj ">&nbsp;<div class="renwu_bj" style="display:none;">&nbsp;</div></a>
+										</div>
+				
+			<div class="midd_cou_ooo" >
+				<!--元素内容-->
+				
+	<div id="video"><input type="hidden" name='sweetowntest' id="sweetowntest" value="0"/><div id="a1">
+	</div></div>
+	<script type="text/javascript">
+	  var sweetowntestnum=0;
+	  function loadedHandler(){
+		    if(CKobject.getObjectById('ckplayer_a1').getType()){
+		      CKobject.getObjectById('ckplayer_a1').addListener('time',timeHandler);
+		    }
+		    else{
+		      CKobject.getObjectById('ckplayer_a1').addListener('time','timeHandler');
+		    }
+		  }
+		  function timeHandler(t){
+		    if(t>-1){
+		    	var time=Math.round(t);
+		    	//CKobject._K_('nowTime').innerHTML='当前播放的时间点是(单位：秒)：'+time;
+		        var sweetowntest=$("#sweetowntest").val();
+				var sweetowntestarr=sweetowntest.split(',');
+				var sweetowntestlength=(sweetowntest.split(',').length)*1-1;
+				
+				//alert(sweetowntestarr);				
+				if(sweetowntest!="0"&&sweetowntestnum<(sweetowntestlength*1-1)&&sweetowntestarr[sweetowntestnum]==time){					
+					CKobject.getObjectById('ckplayer_a1').playOrPause();//视频暂停
+					previewExam(sweetowntestarr[sweetowntestnum*1+1]);
+					sweetowntestnum+=2;//0,2,4
+				}
+		    }
+		  }
+	
+	  var flashvars={     
+		  f:'/cloudfiles/iotres/doc_gens/90/141/16A2360E07E1649D6A73566E83A4835E.mp4/720p.mp4',
+		  c:0,
+		  loaded:'loadedHandler',
+		  };
+	  var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always'};
+	  CKobject.embedSWF('/public/ckplayer/ckplayer.swf','a1','ckplayer_a1','1180','665',flashvars,params);
+	</script>
+		<!-- 音频开始 -->
+			<!--元素内容-->	
+			</div>
+			<div id="nowTime"></div>
+		</div>
+	</div>
+</div>
+<!--答疑--回复——-模态框 -->
+<div class="modal fade" id="myModal_hui" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content xxo_bob">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               回复
+            </h4>
+         </div>
+         <form id="answer_form" method="post">
+         <div class="modal-body">
+         	<input name="problemid" id="problemid" type="hidden" value=""/>
+			<textarea class="cou_tarea" rows="4" name="answercontent" id="answercontent" placeholder="请输入你要回复的内容"></textarea>
+         </div>
+         <div class="modal-footer xxo_modal_footb">
+			<input name="tijiao" type="button" class="cou_btn" value="提&nbsp;交" onClick="javascript:return answerCreateItem();"/>
+         </div>
+         </form>
+      </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div>
+
+<!--随堂测验-模态框，开始 -->
+<div class="modal fade" id="myModal_n" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content xxo_bob" style="width: 800px; left: -200px; top:-220px;" >
+	  <form id="stcform" action="/portal/coursecontent/previewdel" method="post" >
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" >
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               随堂测验
+            </h4>
+         </div>
+         <div class="modal-body xxo_bodyh" id="manage" style="margin-top:-50px;" >
+         
+         </div>
+         <div class="modal-footer xxo_modal_footb">
+		    
+            <button type="button"   class="btn btn-primary pull-right" data-dismiss="modal">
+               关闭
+            </button>
+			<button type="button"  id="tegby"  onclick="substcform()"  class="btn btn-primary pull-right" >
+               提交
+            </button>
+         </div>
+		 </form>
+      </div> <!-- /.modal-content -->
+</div><!-- /.modal -->
+</div>
+<!-- 随堂测验-模态框，结束 -->
+<input type="hidden" id="dstimest" value="0"/>
+<input type="hidden" id="ceyan" value="1"/>
+<script>
+//5秒后弹出随堂测验操作  
+// $(function(){
+// 	var temp=$("#dstimest").val();
+// 	//alert(temp);
+// 	if(temp==1){
+// 		window.setTimeout(previewExam,5000); 
+// 	}
+// });
+
+//弹窗试卷  传递一个素材id
+function previewExam(stemid){
+	//alert(stemid);
+	$("#tegby").css("display","block");
+	$.ajax({
+		url: '/portal/coursecontent/preview', 
+		type: 'POST',
+		data: 'sourseid=13535'+'&stemid='+stemid+'&rnum='+ Math.random(),
+		success: function(data){
+			$("#myModal_n").find(".modal-body").html(data);
+			$("#myModal_n").modal("show");
+			 
+		},
+		error: function(){
+			alert("系统错误，请联系管理员");
+			return false;
+		}
+	});
+}
+//提交随堂测试操作
+function substcform(){
+		var tagElements=$(".panel-default");
+        var i=0;	
+		for (var j = 0; j < tagElements.length; j++){
+			for (var k = 0; k < tagElements.eq(j).find("input").length; k++){
+				if(tagElements.eq(j).find("input").eq(k).prop("checked")==true){
+					 i++;
+					 break;
+				}	  
+			}	  
+		}  
+		var ceyannums=$("#ceyan").val();
+		//alert(i+''+ceyannums);
+		if(i!=ceyannums){
+			var d = dialog({
+			id: 'onedialog',
+			width: 350,
+			title: '系统提示',
+			content: '亲,你还未填写测试,不能提交',
+			okValue: '确定',
+			ok: function () {}			
+		   });
+		   d.show();
+	       return false;
+			
+		}   
+	 $("#tegby").css("display","none");
+	 $('#stcform').ajaxSubmit({
+		url:'/portal/coursecontent/previewdel',
+		type: 'POST',
+		dataType: "text", 
+		success: function(data){
+			//alert(data);
+			$("#myModal_n").find(".modal-body").html(data);
+			$("#myModal_n").modal("show");
+		},
+		error: function(){
+			alert("系统错误，请联系管理员");
+		}
+	}); 
+}
+	
+//退出统计学习时间
+function logouta(){
+	var courseid=document.getElementById("courseid").value;
+	$.ajax({
+		url: '/portal/coursecontent/learntime', 
+		type: 'POST',
+		data: 'courseid='+ courseid,
+		dataType: "json", 
+		success: function(data){
+			if(data.rescode=="success"){
+				//seetooltips("退出学习 学习时间已统计");
+			setTimeout(function(){window.location="/portal/course/index/id/"+courseid+".html";}, 1000);
+			}else{
+				alert(data.errmsg);
+			}
+		},
+		error: function(){
+			
+		}
+	});	
+}
+//初始化文本编辑器
+var um = UM.getEditor('content', {
+	toolbar:[
+		 
+	],
+	imageUrl:"/portal/upload/umeditor",
+	imagePath:"",
+	initialFrameWidth: '99.5%'
+});
+var um2 = UM.getEditor('editorid', {
+	toolbar:[
+		'formula'
+	],
+	imageUrl:"/portal/upload/umeditor",
+	imagePath:"",
+	initialFrameWidth: '99.5%'
+});
+
+
+//讨论 开始***************
+
+$(document).ready(function(){
+	$("#fromid").val(0);
+	///置空讨论文本框
+	um.setContent('');
+	setPage('/portal/coursecontent/discusslook1/?page=1');
+});
+
+function discusCreateItem(){
+	var content = $("#discuss_form").find("textarea[name='content']").val();
+	//var content = um.getPlainTxt();
+	//var verifycode = $("#discuss_form").find("input[name='verifycode']").val();
+	if(content=="" || content=="*内容"){
+		//alert("请填写评论内容");
+		var d = dialog({
+		id: 'onedialog',
+		width: 350,
+		title: '系统提示',
+		content: '请填写评论内容',
+		okValue: '确定',
+		ok: function () {}
+		
+	   });
+	   d.show();
+		return false;
+	}
+	$('#discuss_form').ajaxSubmit({
+		url:'/portal/coursecontent/coursediscuss1/',
+		type: 'POST',
+		dataType: "json", 
+		success: function(data){
+			if(data.rescode=="success"){
+				//alert("发表成功");
+				seetooltips("评论发表成功");
+				//清空文本框
+				 um.setContent('');
+                //setTimeout(function (){window.location = "/member/myexam/index";}, 2000);
+				//发表成功 刷新评论列表
+				setPage('/portal/coursecontent/discusslook1/?page=1');	
+				
+			}else{
+				alert(data.errmsg);
+			}
+		},
+		error: function(){
+			alert("系统错误，请联系管理员");
+		}
+	});
+	return false;
+}
+function setPage(url){
+	 var treeid=document.getElementById("treeid").value;
+	 var courseid=document.getElementById("courseid").value;
+	  $.get(url+'&courseid='+courseid+'&treeid='+treeid, function(data){
+		//alert("Data Loaded: " + data);
+		 $("#discusslookbox").html(data);
+	  });
+
+}
+//删除个人讨论
+function discusslookdel(discussid){
+    var d = dialog({
+		id: 'onedialog',
+		width: 450,
+		title: '系统提示',
+		content: '确认要删除吗',
+		okValue: '确定',
+		ok: function () {
+			$.ajax({
+				url: '/portal/coursecontent/discussdel', 
+				type: 'POST',
+				data:"discussid="+discussid,
+				dataType: "json", 
+				success: function(data){
+					setPage('/portal/coursecontent/discusslook1/?page=1');
+				},
+				error: function(){
+					alert("系统错误，请联系管理员");
+				}
+			});
+		},
+		cancelValue: '取消',
+		cancel: function () {}
+	});
+	d.show();
+	return false;
+}
+
+//讨论结束 ***************
+
+//发表 笔记开始*************
+//显示笔记(分页显示)
+$(document).ready(function(){
+	$("#fromid2").val(0);
+	//um2.setContent('');
+	setPagee('/portal/coursecontent/coursenote2/?page=1');
+});	
+
+function setPagee(url){
+	var courseid=document.getElementById("courseid").value;
+	var treeid=document.getElementById("treeid").value;
+	//alert(courseid);
+	$.get(url+'&courseid='+courseid+'&treeid='+treeid, function(data){
+		//alert("Data Loaded: " + data);
+		$("#notelookbox").html(data);
+	});
+
+}
+
+//创建笔记
+function noteCreateItem(){
+	 var content = $("#editorid").val();
+	 //var content = um2.getPlainTxt();
+	if(content=="" || content=="*内容"){
+		//alert("请填写评论内容");
+		var d = dialog({
+		id: 'onedialog',
+		width: 350,
+		title: '系统提示',
+		content: '请填写笔记内容',
+		okValue: '确定',
+		ok: function () {}
+	   });
+	   d.show();
+		return false;
+	} 	
+	$('#discuss_forma').ajaxSubmit({
+		url:'/portal/coursecontent/coursenote1/',
+		type: 'POST',
+		dataType: "json", 
+		success: function(data){
+			if(data.rescode=="success"){
+				//alert("发表成功");
+				seetooltips("笔记提交成功");
+				um2.setContent('');
+				setPagee('/portal/coursecontent/coursenote2/?page=1');	
+			}else{
+				alert(data.errmsg);
+			}
+		},
+		error: function(){
+			alert("系统错误，请联系管理员");
+		}
+	});
+
+}
+//删除笔记 
+function notedel(noteid){
+	  var d = dialog({
+			id: 'onedialog',
+			width: 450,
+			title: '系统提示',
+			content: '确认要删除吗',
+			okValue: '确定',
+			ok: function () {
+				$.ajax({
+					url: '/portal/coursecontent/notedel', 
+					type: 'POST',
+					data:"noteid="+noteid,
+					dataType: "json", 
+					success: function(data){
+						setPagee('/portal/coursecontent/coursenote2/?page=1');	
+					},
+					error: function(){
+						alert("系统错误，请联系管理员");
+					}
+				});
+			},
+			cancelValue: '取消',
+			cancel: function () {}
+		});
+		d.show();
+		return false;
+}
+
+//发布笔记结束***************
+
+
+//发布问题 开始******************
+function problemCreateItem(){
+	var title = $("#title").val();
+	var problemcontent = $("#problemcontent").val();
+	if(title==""){
+		seetooltips("请输入标题");
+		return false;
+		}
+	if(problemcontent==""){
+		seetooltips("请输入内容");
+		return false;
+		}
+	$('#problem_form').ajaxSubmit({
+		url:'/portal/coursecontent/courseproblem4',
+		type: 'POST',
+		dataType: "json",
+		success: function(data){
+			if(data.rescode=="success"){
+				//alert("发表成功");
+				seetooltips("问题发表成功");				
+				//清空文本框
+				// um.setContent('');
+                //setTimeout(function (){window.location = "/member/myexam/index";}, 2000);
+				//发表成功 刷新评论列表
+				setPaged('/portal/coursecontent/courseproblem5/?page=1');	
+				
+			}else{
+				alert(data.errmsg);
+			}
+		},
+		error: function(){
+			alert("系统错误，请联系管理员");
+		}
+	});
+	return false;		
+}
+
+$(document).ready(function(){
+	   // $("#fromid").val(0);
+		///置空讨论文本框
+	   // um.setContent('');
+		setPaged('/portal/coursecontent/courseproblem5/?page=1');
+});
+function lookproblemContent(msgid){
+	$("#problemanswer_"+ msgid).toggle();
+}
+
+function setPaged(url){
+	 //var courseid=document.getElementById("courseid").value;
+	// var treeid=document.getElementById("treeid").value;
+	 //alert(courseid);
+	  $.get(url+'&id='+421, function(data){
+		//alert("Data Loaded: " + data);
+		 $("#problem").html(data);
+	  });
+
+}
+
+//删除问题
+function problemdel(problemid){
+	 var d = dialog({
+			id: 'onedialog',
+			width: 450,
+			title: '系统提示',
+			content: '确认要删除吗',
+			okValue: '确定',
+			ok: function () {
+				$.ajax({
+					url: '/portal/coursecontent/problemdel', 
+					type: 'POST',
+					data:"problemid="+problemid,
+					dataType: "json", 
+					success: function(data){
+						setPaged('/portal/coursecontent/courseproblem5/?page=1');
+					},
+					error: function(){
+						alert("系统错误，请联系管理员");
+					}
+				});
+			},
+			cancelValue: '取消',
+			cancel: function () {}
+		});
+		d.show();
+		return false;
+}
+
+//回复问题
+function reply(problemid){
+	$("#problemid").val(problemid);
+}
+//回复问题
+function answerCreateItem(){
+	var answercontent = $("#answercontent").val();
+	if(answercontent==""){
+		seetooltips("请输入回复内容");
+		return false;
+		}
+	
+	$('#answer_form').ajaxSubmit({
+		url:'/portal/coursecontent/courseproblem3/',
+		type: 'POST',
+		dataType: "json",
+		success: function(data){
+			if(data.rescode=="success"){
+				//alert("发表成功");
+				//seetooltips("回复成功");
+				$("#answercontent").val('');
+				$('#myModal_hui').modal('hide');
+				setPaged('/portal/coursecontent/courseproblem5/?page=1');					
+			}else{
+				alert(data.errmsg);
+			}
+		},
+		error: function(){
+			alert("系统错误，请联系管理员");
+		}
+	});
+	return false;	
+}
+
+//发布问题结束***************************
+
+//提示信息
+function seetooltips(text){
+	var d = dialog({
+		id: 'onedialog',
+		width: 350,
+		title: '系统提示',
+		content: text,
+		okValue: '确定',
+		ok: function () {}
+		
+	});
+	d.show();
+}
+</script>
+<script>
+//scroll定位
+$(document).ready(function(){
+	var scroll_id=14250;
+	$("#scroll_main").scrollTop($('#scroll_'+scroll_id).offset().top - $("#scroll_main").offset().top);
+	//$("#scroll_main").scrollTop(500); 
+});
+</script>
+
+<script language="javascript">
+var tongji_hits_type = 4;
+var tongji_hits_productid = 421;
+</script>
+<script language="javascript" src="/public/tongji/hits.js"></script>
+
+<script language="javascript">
+var tongji_visits_type = 4;
+var tongji_visits_productid = 421;
+var tongji_visits_interval = 30;
+</script>
+<script language="javascript" src="/public/tongji/visits.js"></script>
+
+<script language="javascript">
+var learningtimeinterval = 1;
+</script>
+<script language="javascript" src="/public/tongji/learningtimer.js"></script>
+
+<iframe src="/tongji/course/resource/id/13535.html" style="display:none;"></iframe>
+<iframe src="/tongji/course/poolresource/id/13535.html" style="display:none;"></iframe>
+</body>
+</html>
