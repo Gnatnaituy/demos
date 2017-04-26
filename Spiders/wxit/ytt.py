@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 # 自己的id
 my_id = 421
 # 登陆用的cookie
-after_cookie='PHPSESSID=7ujf30s2rm7jcgibrdst6mfld5; HicourseSESSIONID=lauvov6audmvvehg2e6aiism10; b816448737fd5b8ac832b94a869ec7dc_13405=51eeHWngLmc5V8MRA9n5biflClKHktdAk3v3urszLcSIwvZ2utcu; 07bf2ad6a07c3199a9e80f31335ef267=ecb6VG6BGObVcybFs5nMojeS2uTsvn4%2FOFeo0cibcf08GWQwJ27ReTBrkSpd7DBOJtkD4TtejITWUISuoQYdqrTYV40EjfwF5NrCaqVwSK9fg%2FG2O%2BHZ%2FtokzsZ4dlFz937SbeMI0h8kgMrfu7AoibDiiTsaiGNoaR%2F4%2FRBZkdL6%2B9hgW3epphBFRmK1JsQ7xYQHq4MLHdv8RPpsJmkA7XnwgV8X%2FDupysUjl%2FJkYtLUqjb5bZsk1V%2BSQggOiXkwtRER4Db8TKw; c3cf13b9a8b9ecef0a16f55f764695a9_13405=889455dRedY7TGCSwd47gMCnATmjx8ZU3Ejq3n1WMjAHw86EOuiZNve0j0GbXdVH'
+after_cookie='PHPSESSID=s6hs2ef0gpifn04sn5karu1jn1; HicourseSESSIONID=r6558s7ui6dkvud9mkpa3tseu3; b816448737fd5b8ac832b94a869ec7dc_13405=f8eeiX8LVeiT1S5yiM7eSqMovLqlcD5jYlxag6WRMvthys2eyhjA; c3cf13b9a8b9ecef0a16f55f764695a9_13405=97d8ypdQ1s%2FCujORTOh4JguJsWf%2F9ffESxdj4XAkbGu5nFd63V87eujPN5jAWtxB; 07bf2ad6a07c3199a9e80f31335ef267=a799uHUCqanp70iJfTVWn14w6vOyDtWnFJe86tcQRorsPUPHlICUSSsYKsFsWfEJQzGV%2BWOKO72ppWF4%2BIa8vlf3mN7MXbE2OMtFwDQfGpHK6tezDgdpfVLpm9YNLwwR%2BmNRlbnv2fALMQ%2F%2B3QWI0q0helGGZX1oU6lv6b0xerEZPDPJb7zUECokM%2FrRLVqzGPl9qFUkckKDmzb%2Fy7sun1LxAPRUkdo7ZnY8EImiu%2FtgS8dfTqpe569xSJu53%2BBA%2FJy6MASKE5A; b816448737fd5b8ac832b94a869ec7dc_13413=a799uHUCqanp70iJfTVVnVxg7fLoCYCjRsG7uIdZVNK%2FMknRiIGW'
 
 cookies = {}
 for line in after_cookie.split(';'):
@@ -16,7 +16,7 @@ for line in after_cookie.split(';'):
 
 if __name__ == '__main__':
     course_urls = []    
-    for i in range(14231, 14263):   # 第一章
+    for i in range(14240, 14396):
         tags = []
         course_url = 'http://wxit.org/portal/coursecontent/index/treeid/' +\
              str(i) + '/id/' + str(my_id) + '.html'
