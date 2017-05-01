@@ -1,39 +1,45 @@
 import requests
 import re
+import asyncio
 from bs4 import BeautifulSoup
 
 
-# 自己的id
-my_id = 421
-# 登陆用的cookie
-after_cookie='PHPSESSID=s6hs2ef0gpifn04sn5karu1jn1; HicourseSESSIONID=r6558s7ui6dkvud9mkpa3tseu3; b816448737fd5b8ac832b94a869ec7dc_13405=f8eeiX8LVeiT1S5yiM7eSqMovLqlcD5jYlxag6WRMvthys2eyhjA; c3cf13b9a8b9ecef0a16f55f764695a9_13405=97d8ypdQ1s%2FCujORTOh4JguJsWf%2F9ffESxdj4XAkbGu5nFd63V87eujPN5jAWtxB; 07bf2ad6a07c3199a9e80f31335ef267=a799uHUCqanp70iJfTVWn14w6vOyDtWnFJe86tcQRorsPUPHlICUSSsYKsFsWfEJQzGV%2BWOKO72ppWF4%2BIa8vlf3mN7MXbE2OMtFwDQfGpHK6tezDgdpfVLpm9YNLwwR%2BmNRlbnv2fALMQ%2F%2B3QWI0q0helGGZX1oU6lv6b0xerEZPDPJb7zUECokM%2FrRLVqzGPl9qFUkckKDmzb%2Fy7sun1LxAPRUkdo7ZnY8EImiu%2FtgS8dfTqpe569xSJu53%2BBA%2FJy6MASKE5A; b816448737fd5b8ac832b94a869ec7dc_13413=a799uHUCqanp70iJfTVVnVxg7fLoCYCjRsG7uIdZVNK%2FMknRiIGW'
+my_cookie = 'PHPSESSID=jthvu5gjf9eeh9ev0qn18ofkv5; HicourseSESSIONID=16t8n1nqtv93s2bsihvllum7t6; 07bf2ad6a07c3199a9e80f31335ef267=d337T3EMwwDEuct%2B5B6f5uy%2BuYtkSIKBITjRuxbDebr8HqnRGNl0RK13kTdnGUbNCptFJtuySPM5OuRN3bLPG3nulkhR0xa5re7lNb4gRPtrY1lktLCi5HyHc8Ja4hytGLaHRHZa6HREH9syfZduSRRUnKCFLQ%2F2k8bZZeYeFly8unRi9UwLbfPhiqlfTn2Ba2iFAyDqK0CIWNFpHzDOkl6fEWAxwIVXTnbhJ3PEGwWbo%2FBk%2BBxga97QvYvgmV9eIrXt93Ayjgg; b816448737fd5b8ac832b94a869ec7dc_13400=27dcroBcDXX0udUxFAAhnbaGX9OXFau3UR7cu1lyvM%2BydiwC%2BY6z'
 
 cookies = {}
-for line in after_cookie.split(';'):
-    key, value = line.split('=', 1) # 1代表只分一次
+for line in my_cookie.split(';'):
+    key, value = line.split('=', 1)
     cookies[key] = value
 
 
+async def get_tag(course_urls):
+    for course_url in course_urls:
+        await click_url(course_url)
+
+
+async def click_url(course_url):
+    r = requests.get(course_url, cookies=cookies)
+    soup = BeautifulSoup(r.content, 'html.parser')
+    for tag in soup.find_all(href=re.compile("/portal/coursecontent/index/treeid/\d{5}/lessonid/\d{5}/id/\d{3}.html")):
+        if 'xueguo_col' in str(tag):
+            print('>>>>>> Already studied')
+        else:
+            await click_tag(tag)
+
+
+async def click_tag(tag):
+    requests.get('http://wxit.org/portal/coursecontent/index/treeid/' + str(i) +
+                 '/lessonid/' + str(tag)[83:88] + '/id/421.html', cookies=cookies)
+    print(str(tag)[83:88] + '>>>>>>Studing now')
+
+
 if __name__ == '__main__':
-    course_urls = []    
-    for i in range(14240, 14396):
-        tags = []
-        course_url = 'http://wxit.org/portal/coursecontent/index/treeid/' +\
-             str(i) + '/id/' + str(my_id) + '.html'
-        r = requests.get(course_url, cookies=cookies)
-        soup = BeautifulSoup(r.content, 'html.parser')
-        for tag_raw in soup.find_all(href= \
-        re.compile("/portal/coursecontent/index/treeid/\d{5}/lessonid/\d{5}/id/\d{3}.html")):
-            tags.append(str(tag_raw))
-        for tag in tags:
-            if 'xueguo_col' in tag:
-                print(tag + '>>>>>>已学过')
-            elif not 'xueguo_col' in tag:
-                requests.get('http://wxit.org/portal/coursecontent/index/treeid/' + str(i)\
-                     + '/lessonid/' + tag[83:88] + '/id/' + str(my_id) + '.html', cookies=cookies)
-                print('http://wxit.org/portal/coursecontent/index/treeid/' + str(i) + '/lessonid/' +\
-                    tag[83:88] + '/id/' + str(my_id) + '.html' + '>>>>>>正在学习')
-            else:
-                print('>>>>>>>>出错了<<<<<<<<<<')
 
+    course_urls = []
+    for i in range(14252, 14392): # 240 392
+        course_urls.append(
+            'http://wxit.org/portal/coursecontent/index/treeid/' + str(i) + '/id/421.html')
 
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(get_tag(course_urls))
+    loop.close()
