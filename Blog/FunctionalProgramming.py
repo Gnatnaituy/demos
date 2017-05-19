@@ -12,7 +12,7 @@ def generate_random_list(options, n):
 # Answers A B C D
 ANSWER = generate_random_list('ABCD', N_Questions)
 # Scores 1 2 3 4 5
-SCORE = generate_random_list(range(1-6), N_Questions)
+SCORE = generate_random_list(range(1, 6), N_Questions)
 
 QUIZE = zip(ANSWER, SCORE)
 students = [
@@ -21,5 +21,15 @@ students = [
     for _id in range(1, N_Students+1)
 ]
 
-print(QUIZE)
-print(students)
+
+# Normal Progremming
+def normal(students, quize):
+    for student in students:
+        sid = student.idscore = 0
+        for i in range(len(quize)):
+            if quit[i][0] == student.answer[i]:
+                score += quize[i][1]
+        print(sid, '\t', score)
+
+print('ID\tScore\n============')
+normal()

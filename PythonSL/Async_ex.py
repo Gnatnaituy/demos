@@ -17,7 +17,8 @@ def consume():
         data = yield
         data_items_seen += len(data)
         running_sum += sum(data)
-        print('Comsumed, Average Time: {}'.format(running_sum / float(data_items_seen)))
+        print('Comsumed, Average Time: {}'.format(
+            running_sum / float(data_items_seen)))
 
 
 def produce(consumer):
