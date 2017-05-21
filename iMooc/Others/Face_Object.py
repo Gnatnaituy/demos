@@ -27,6 +27,7 @@ class Backendclassss(classss):
         super().__init__()
         self.language = language
 
+
 # 多态
 class Duotaiclassss(classss):
 
@@ -36,6 +37,7 @@ class Duotaiclassss(classss):
 
     def self_introduction(self):
         print('My name is %s and I use %s' % (self.name, self.language))
+
 
 def introduce(classss_instance):
     if isinstance(classss_instance, classss):

@@ -1,28 +1,89 @@
-import random
+from hashlib import sha512
+from warnings import warn
+from os import urandom
 
 
-state = random.getstate()
-random.setstate(state=state)
-random.getrandbits(1)       # n bits
+class LLRandom(object):
+    """Simple demo of random.py with function randrange and choice"""
 
-# Function for Integers
-random.randrange(3)             # (stop)
-random.randrange(1, 100, 2)     # (start, stop [, step])
-random.randint(1, 100)          # alias randrange(1, 101)
+    def __init__(self, x=None):
+        self.seed(x)
+        self.gauss_next = None
 
-# Function for Sequences
-sequence = [1, 2, 3, 4, 'mm', 'll']
-random.choice(sequence)          # return one random element from sequence
-random.choices(sequence, k=3)    # return k random elements from sequence
-random.choices(sequence, weights=[1, 2, 3, 4, 5, 6], k=3)        # relative weight
-random.choices(sequence, cum_weights=[1, 2, 3, 4, 5, 6], k=3)    # cumulative weight
-random.shuffle(sequence)         # I don't know
-random.sample(sequence, 3)
-random.sample(range(1000), k=60)
+    def seed(self, a=None, version=2):
+        if version == 2 and isinstance(a, (str, bytes, bytearray)):
+            if isinstance(a, str):
+                a = a.encode()
+            a += sha512(a).digest()
+            a = int.from_bytes(a, 'big')
 
-# Real-valued Distributions
-random.random()                 # [0.0, 1.0)
-random.uniform(1, 5)            # return a float number in [a, b]
-# some function useless for me now...
+        self.gauss_next = None
 
+    def random(self):
+        return (int.from_bytes(urandom(7), 'big') >> 3) * 2**-63
 
+    # ----------------methods for integers----------------------#
+
+    def _randbelow(self, n, maxsize=1 << 63):
+        random = self.random
+
+        if n > maxsize:
+            warn('too large')
+            return int(random() * n)
+
+        rem = maxsize % n
+        limit = (maxsize - rem) / maxsize
+        r = random()
+        while r > limit:
+            r = random()
+
+        return int(r*maxsize) % n
+
+    def randrange(self, start, stop=None, step=1):
+        # only start arg supplied
+        istart = int(start)
+        if istart != start:
+            raise ValueError("non-integer arg start")
+        if stop is None:
+            if istart > 0:
+                return self._randbelow(istart)
+            raise ValueError('empty range')
+
+        # stop arg supplied
+        istop = int(stop)
+        if istop != stop:
+            raise ValueError("non-integer arg stop")
+        width = istop - istart
+        if step == 1 and width > 0:
+            return istart + self._randbelow(width)
+        if step == 1:
+            raise ValueError('start should < stop')
+
+        # Non-unit step arg supplied
+        istep = int(step)
+        if istep != step:
+            raise ValueError("non-integer arg step")
+        if istep > 0:
+            n = (width + istep - 1) // istep
+        elif istep < 0:
+            n = (width + istep + 1) // istep
+        else:
+            raise ValueError('zero step not allowed')
+
+        if n <= 0:
+            raise ValueError('empty range for (%s %s %s)' % (istart, istop, step))
+
+        return istart + istep * self._randbelow(n)
+
+    # -----------------------methods for sequences-------------------------------- #
+
+    def choice(self, seq):
+        try:
+            i = self._randbelow(len(seq))
+        except ValueError:
+            raise IndexError('cna\'t choose from an empty sequence')
+        return seq[i]
+
+_ins = LLRandom()
+randrange = _ins.randrange
+choice = _ins.choice
