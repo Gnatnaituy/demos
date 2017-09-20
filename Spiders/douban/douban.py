@@ -47,7 +47,8 @@ def get_book_info(url):
         desc = None if content.select('.article-desc-brief') == [] \
             else content.select('.article-desc-brief')[0].text
         print('Downloading page -->', url)
-        cursor.execute(sql, (title, author, price, category, rating, eveluate_nums, desc))
+        cursor.execute(sql, (title, author, price, category,
+                             rating, eveluate_nums, desc))
         connect.commit()
 
 
@@ -63,10 +64,11 @@ if __name__ == '__main__':
     search = input('请输入书籍关键字:')
     try:
         with connect.cursor() as cursor:
-            url_prefix = 'https://read.douban.com/search?q=' + str(search) + '&start='
+            url_prefix = 'https://read.douban.com/search?q=' + \
+                str(search) + '&start='
             urls = []
             for i in range(0, get_max_page(url_prefix)):
-                urls.append(url_prefix + str(i*10))
+                urls.append(url_prefix + str(i * 10))
             for url in urls:
                 get_book_info(url)
     finally:
