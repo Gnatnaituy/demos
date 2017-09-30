@@ -81,7 +81,7 @@ class LLRandom(object):
         try:
             i = self._randbelow(len(seq))
         except ValueError:
-            raise IndexError('cna\'t choose from an empty sequence')
+            raise IndexError('can\'t choose from an empty sequence')
         return seq[i]
 
 _ins = LLRandom()
