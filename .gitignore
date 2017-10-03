@@ -5,15 +5,12 @@ __pycache__/
 .DS_Store
 *.py[cod]
 *$py.class
-<<<<<<< HEAD
 .idea/
 migrations/
 compiler/
 *.yml
 .python-version
 .vscode/
-=======
->>>>>>> eb5491130183b69f87b0b95fb79fe8a4183e3008
 
 # C extensions
 *.so
