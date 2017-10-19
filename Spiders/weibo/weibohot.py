@@ -26,7 +26,9 @@ if __name__ == "__main__":
                 count_raw = tag.a.span.em.text
                 word_raw = tag.a.span.text
                 word = word_raw.replace(count_raw, '')
+                print(type(word))
                 count = int(count_raw)
+                print(count)
                 cursor.execute(sql, (word, count))
                 connect.commit()
     finally:
