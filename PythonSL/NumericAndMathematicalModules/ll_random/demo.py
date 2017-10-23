@@ -84,6 +84,7 @@ class LLRandom(object):
             raise IndexError('can\'t choose from an empty sequence')
         return seq[i]
 
+
 _ins = LLRandom()
 randrange = _ins.randrange
 choice = _ins.choice
