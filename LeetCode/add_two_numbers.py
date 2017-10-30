@@ -3,10 +3,13 @@ class ListNode:
         self.val = x
         self.next = None
 
+
 class Solution(object):
-    def add_two_numbers(self, l1, l2):
+
+    @staticmethod
+    def add_two_numbers(l1, l2):
         """:Type l1: ListNode
-            :Type l2: ListNode"""
+           :Type l2: ListNode"""
         dummy = ListNode(0)
         current, carry = dummy, 0
 
