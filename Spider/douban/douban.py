@@ -61,7 +61,7 @@ sql = 'insert into `douban_books`(`title`, `author`, `price`, `category`, `ratin
 
 
 if __name__ == '__main__':
-    search = input('请输入书籍关键字:')
+    search = input('Please input parameter:')
     try:
         with connect.cursor() as cursor:
             url_prefix = 'https://read.douban.com/search?q=' + \
