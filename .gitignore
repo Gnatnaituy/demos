@@ -11,6 +11,8 @@ compiler/
 *.yml
 .python-version
 .vscode/
+cmake-build-debug
+CMakeLists.txt
 
 # C extensions
 *.so
