@@ -300,7 +300,7 @@ practice_21()
     while(!(x%2));
 }
 
-practice_22()   // 多维数组
+practice_22()   // Two-Dimensional Array
 {
     int a[5][3]={{0},{1},{2}};
     int b[3][3] = {1,2,3};
@@ -316,15 +316,24 @@ practice_22()   // 多维数组
     int f = *(*(e+2)+1);
     int *g = *(e+2);
     int h = *(g+1);
+
+    char ch[3][5]={"AAAA","BBB","CC"};
 }
+
+practice_23()
+{
+    char str[]="aeiou",*p=str;
+    for(int i=0; i < 6; i++)
+        printf("%c\n", *p + i);
+}
+
 
 int main()
 {
+    int a1, a2;
+    char c1, c2;
+    scanf("%d%c%d%c", &a1, &c1, &a2, &c2);
 
-    char str[]="\tab\n\012\\\"";
-    int i;
-    for(i=0; i < 8;i++)
-        printf("%c--", str[i]);
 
     return 0;
 }
