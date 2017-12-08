@@ -2,12 +2,18 @@
 #include <memory.h>
 /* 专升本 */
 
+
+
+
+
 int main()
 {
 
-    int b[][3] = {};
-    int c[][3] = {2*3};
-
+    int a = -0x48a;
+    float b = 0x2e5;
+    int c = 0xe;
+    int d = -0xffff;
+    int e = 011;
 
     return 0;
 }
