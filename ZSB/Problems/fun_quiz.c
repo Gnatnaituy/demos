@@ -5,22 +5,23 @@
 #include <stdio.h>
 
 
-swap1(int x,int y)
+void swap1(int x,int y)
 {
     int w;                //交换x与y的值
     w=x; x=y; y=w;
 }
-swap2(int *p1,int *p2)
+void swap2(int *p1,int *p2)
 {
     int *p;               //交换p1与p2里存的地址
     p=p1; p1=p2; p2=p;
 }
-swap3(int *pa, int *pb)
+void swap3(int *pa, int *pb)
 {
     int p;                //交换pa与pb所对应变量的值
     p=*pa; *pa=*pb; *pb=p;
 }
-practice_1()    // different type of swap function
+
+void practice_1()    // different type of swap function
 {
     int a = 5,b = 7, *ptr1, *ptr2;
     ptr1=&a; ptr2=&b;
@@ -34,7 +35,7 @@ practice_1()    // different type of swap function
     printf("data9=%d\tdata10=%d\n",a,b);
 }
 
-practice_2()    // what is the value of n at the end ?
+void practice_2()    // what is the value of n eventually ?
 {
     int i,n=0;
     for( i=2;i<5;i++){
@@ -48,7 +49,7 @@ practice_2()    // what is the value of n at the end ?
     printf("n=%d\n",n);
 }
 
-practice_3()    // what is the output ?
+void practice_3()    // what is the output ?
 {
     int a[][3]={1,2,3,4,5,6};
     int i, j, (*p)[3];	p=a;
@@ -60,7 +61,7 @@ practice_3()    // what is the output ?
     printf("\n");
 }
 
-practice_4()    // what is the output ?
+void practice_4()    // what is the output ?
 {
     char a[]="Language",b[]="Programe";
     char *p1,*p2; int k;
@@ -70,7 +71,7 @@ practice_4()    // what is the output ?
             printf("%c",*(p1+k));
 }
 
-practice_5()    // what is the output ?
+void practice_5()    // what is the output ?
 {	int i,j,k,a=5,m[6][6];
     i=1;
     k=(a+1)/2;

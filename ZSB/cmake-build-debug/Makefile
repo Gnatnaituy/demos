@@ -123,87 +123,6 @@ ZSB/fast:
 	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/build
 .PHONY : ZSB/fast
 
-fun_fill.o: fun_fill.c.o
-
-.PHONY : fun_fill.o
-
-# target to build an object file
-fun_fill.c.o:
-	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/fun_fill.c.o
-.PHONY : fun_fill.c.o
-
-fun_fill.i: fun_fill.c.i
-
-.PHONY : fun_fill.i
-
-# target to preprocess a source file
-fun_fill.c.i:
-	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/fun_fill.c.i
-.PHONY : fun_fill.c.i
-
-fun_fill.s: fun_fill.c.s
-
-.PHONY : fun_fill.s
-
-# target to generate assembly for a file
-fun_fill.c.s:
-	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/fun_fill.c.s
-.PHONY : fun_fill.c.s
-
-fun_quiz.o: fun_quiz.c.o
-
-.PHONY : fun_quiz.o
-
-# target to build an object file
-fun_quiz.c.o:
-	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/fun_quiz.c.o
-.PHONY : fun_quiz.c.o
-
-fun_quiz.i: fun_quiz.c.i
-
-.PHONY : fun_quiz.i
-
-# target to preprocess a source file
-fun_quiz.c.i:
-	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/fun_quiz.c.i
-.PHONY : fun_quiz.c.i
-
-fun_quiz.s: fun_quiz.c.s
-
-.PHONY : fun_quiz.s
-
-# target to generate assembly for a file
-fun_quiz.c.s:
-	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/fun_quiz.c.s
-.PHONY : fun_quiz.c.s
-
-fun_result.o: fun_result.c.o
-
-.PHONY : fun_result.o
-
-# target to build an object file
-fun_result.c.o:
-	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/fun_result.c.o
-.PHONY : fun_result.c.o
-
-fun_result.i: fun_result.c.i
-
-.PHONY : fun_result.i
-
-# target to preprocess a source file
-fun_result.c.i:
-	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/fun_result.c.i
-.PHONY : fun_result.c.i
-
-fun_result.s: fun_result.c.s
-
-.PHONY : fun_result.s
-
-# target to generate assembly for a file
-fun_result.c.s:
-	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/fun_result.c.s
-.PHONY : fun_result.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -240,15 +159,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ZSB"
-	@echo "... fun_fill.o"
-	@echo "... fun_fill.i"
-	@echo "... fun_fill.s"
-	@echo "... fun_quiz.o"
-	@echo "... fun_quiz.i"
-	@echo "... fun_quiz.s"
-	@echo "... fun_result.o"
-	@echo "... fun_result.i"
-	@echo "... fun_result.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

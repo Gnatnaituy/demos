@@ -7,21 +7,17 @@
 
 
 // 程序填空题
-practice_6()    // calculate 1-2+3-4+5-.....+99-100
-{
+void practice_6() {     // calculate 1-2+3-4+5-.....+99-100
     int i = 1, j = 1, s = 0;
-    while(i <= 100) //while(____)
-    {
-        s += i * j; // s += ____
+    while(i <= 100) {   //while(____)
+        s += i * j;     // s += ____
         i++;
-        j = -j; // ____
+        j = -j;         // ____
     }
     printf("The result: %d\n", s);
-
 }
 
-practice_7()    // calculate t = 1 + 1/(2^2) + 1/(3^2) + .... + 1/(n^2)
-{
+void practice_7() {    // calculate t = 1 + 1/(2^2) + 1/(3^2) + .... + 1/(n^2)
     int j,n;
     double t=1.0;
     printf("Please input n:\n");

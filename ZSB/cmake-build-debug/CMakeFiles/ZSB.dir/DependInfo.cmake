@@ -4,9 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/hasaker/Coding/Practices/ZSB/fun_fill.c" "/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/CMakeFiles/ZSB.dir/fun_fill.c.o"
-  "/Users/hasaker/Coding/Practices/ZSB/fun_quiz.c" "/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/CMakeFiles/ZSB.dir/fun_quiz.c.o"
-  "/Users/hasaker/Coding/Practices/ZSB/fun_result.c" "/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/CMakeFiles/ZSB.dir/fun_result.c.o"
   "/Users/hasaker/Coding/Practices/ZSB/main.c" "/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/CMakeFiles/ZSB.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

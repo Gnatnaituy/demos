@@ -3,5 +3,5 @@ project(ZSB)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES main.c fun_result.c fun_fill.c fun_quiz.c)
+set(SOURCE_FILES main.c Problems)
 add_executable(ZSB ${SOURCE_FILES})

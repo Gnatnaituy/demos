@@ -6,20 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/hasaker/Coding/Practices/ZSB/fun_fill.c
-stdio.h
--
-string.h
--
-
-/Users/hasaker/Coding/Practices/ZSB/fun_quiz.c
-stdio.h
--
-
-/Users/hasaker/Coding/Practices/ZSB/fun_result.c
-stdio.h
--
-
 /Users/hasaker/Coding/Practices/ZSB/main.c
 stdio.h
 -

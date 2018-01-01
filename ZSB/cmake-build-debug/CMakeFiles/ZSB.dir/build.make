@@ -81,95 +81,17 @@ CMakeFiles/ZSB.dir/main.c.o.provides: CMakeFiles/ZSB.dir/main.c.o.requires
 CMakeFiles/ZSB.dir/main.c.o.provides.build: CMakeFiles/ZSB.dir/main.c.o
 
 
-CMakeFiles/ZSB.dir/fun_result.c.o: CMakeFiles/ZSB.dir/flags.make
-CMakeFiles/ZSB.dir/fun_result.c.o: ../fun_result.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ZSB.dir/fun_result.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ZSB.dir/fun_result.c.o   -c /Users/hasaker/Coding/Practices/ZSB/fun_result.c
-
-CMakeFiles/ZSB.dir/fun_result.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ZSB.dir/fun_result.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hasaker/Coding/Practices/ZSB/fun_result.c > CMakeFiles/ZSB.dir/fun_result.c.i
-
-CMakeFiles/ZSB.dir/fun_result.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ZSB.dir/fun_result.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hasaker/Coding/Practices/ZSB/fun_result.c -o CMakeFiles/ZSB.dir/fun_result.c.s
-
-CMakeFiles/ZSB.dir/fun_result.c.o.requires:
-
-.PHONY : CMakeFiles/ZSB.dir/fun_result.c.o.requires
-
-CMakeFiles/ZSB.dir/fun_result.c.o.provides: CMakeFiles/ZSB.dir/fun_result.c.o.requires
-	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/fun_result.c.o.provides.build
-.PHONY : CMakeFiles/ZSB.dir/fun_result.c.o.provides
-
-CMakeFiles/ZSB.dir/fun_result.c.o.provides.build: CMakeFiles/ZSB.dir/fun_result.c.o
-
-
-CMakeFiles/ZSB.dir/fun_fill.c.o: CMakeFiles/ZSB.dir/flags.make
-CMakeFiles/ZSB.dir/fun_fill.c.o: ../fun_fill.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ZSB.dir/fun_fill.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ZSB.dir/fun_fill.c.o   -c /Users/hasaker/Coding/Practices/ZSB/fun_fill.c
-
-CMakeFiles/ZSB.dir/fun_fill.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ZSB.dir/fun_fill.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hasaker/Coding/Practices/ZSB/fun_fill.c > CMakeFiles/ZSB.dir/fun_fill.c.i
-
-CMakeFiles/ZSB.dir/fun_fill.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ZSB.dir/fun_fill.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hasaker/Coding/Practices/ZSB/fun_fill.c -o CMakeFiles/ZSB.dir/fun_fill.c.s
-
-CMakeFiles/ZSB.dir/fun_fill.c.o.requires:
-
-.PHONY : CMakeFiles/ZSB.dir/fun_fill.c.o.requires
-
-CMakeFiles/ZSB.dir/fun_fill.c.o.provides: CMakeFiles/ZSB.dir/fun_fill.c.o.requires
-	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/fun_fill.c.o.provides.build
-.PHONY : CMakeFiles/ZSB.dir/fun_fill.c.o.provides
-
-CMakeFiles/ZSB.dir/fun_fill.c.o.provides.build: CMakeFiles/ZSB.dir/fun_fill.c.o
-
-
-CMakeFiles/ZSB.dir/fun_quiz.c.o: CMakeFiles/ZSB.dir/flags.make
-CMakeFiles/ZSB.dir/fun_quiz.c.o: ../fun_quiz.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ZSB.dir/fun_quiz.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ZSB.dir/fun_quiz.c.o   -c /Users/hasaker/Coding/Practices/ZSB/fun_quiz.c
-
-CMakeFiles/ZSB.dir/fun_quiz.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ZSB.dir/fun_quiz.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hasaker/Coding/Practices/ZSB/fun_quiz.c > CMakeFiles/ZSB.dir/fun_quiz.c.i
-
-CMakeFiles/ZSB.dir/fun_quiz.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ZSB.dir/fun_quiz.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hasaker/Coding/Practices/ZSB/fun_quiz.c -o CMakeFiles/ZSB.dir/fun_quiz.c.s
-
-CMakeFiles/ZSB.dir/fun_quiz.c.o.requires:
-
-.PHONY : CMakeFiles/ZSB.dir/fun_quiz.c.o.requires
-
-CMakeFiles/ZSB.dir/fun_quiz.c.o.provides: CMakeFiles/ZSB.dir/fun_quiz.c.o.requires
-	$(MAKE) -f CMakeFiles/ZSB.dir/build.make CMakeFiles/ZSB.dir/fun_quiz.c.o.provides.build
-.PHONY : CMakeFiles/ZSB.dir/fun_quiz.c.o.provides
-
-CMakeFiles/ZSB.dir/fun_quiz.c.o.provides.build: CMakeFiles/ZSB.dir/fun_quiz.c.o
-
-
 # Object files for target ZSB
 ZSB_OBJECTS = \
-"CMakeFiles/ZSB.dir/main.c.o" \
-"CMakeFiles/ZSB.dir/fun_result.c.o" \
-"CMakeFiles/ZSB.dir/fun_fill.c.o" \
-"CMakeFiles/ZSB.dir/fun_quiz.c.o"
+"CMakeFiles/ZSB.dir/main.c.o"
 
 # External object files for target ZSB
 ZSB_EXTERNAL_OBJECTS =
 
 ZSB: CMakeFiles/ZSB.dir/main.c.o
-ZSB: CMakeFiles/ZSB.dir/fun_result.c.o
-ZSB: CMakeFiles/ZSB.dir/fun_fill.c.o
-ZSB: CMakeFiles/ZSB.dir/fun_quiz.c.o
 ZSB: CMakeFiles/ZSB.dir/build.make
 ZSB: CMakeFiles/ZSB.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable ZSB"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ZSB"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ZSB.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -178,9 +100,6 @@ CMakeFiles/ZSB.dir/build: ZSB
 .PHONY : CMakeFiles/ZSB.dir/build
 
 CMakeFiles/ZSB.dir/requires: CMakeFiles/ZSB.dir/main.c.o.requires
-CMakeFiles/ZSB.dir/requires: CMakeFiles/ZSB.dir/fun_result.c.o.requires
-CMakeFiles/ZSB.dir/requires: CMakeFiles/ZSB.dir/fun_fill.c.o.requires
-CMakeFiles/ZSB.dir/requires: CMakeFiles/ZSB.dir/fun_quiz.c.o.requires
 
 .PHONY : CMakeFiles/ZSB.dir/requires
 

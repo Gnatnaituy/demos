@@ -82,13 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/hasaker/Coding/Practices/ZSB/fun_fill.c">
-			<Option target="ZSB"/>
-		</Unit>
-		<Unit filename="/Users/hasaker/Coding/Practices/ZSB/fun_quiz.c">
-			<Option target="ZSB"/>
-		</Unit>
-		<Unit filename="/Users/hasaker/Coding/Practices/ZSB/fun_result.c">
+		<Unit filename="/Users/hasaker/Coding/Practices/ZSB/Problems">
 			<Option target="ZSB"/>
 		</Unit>
 		<Unit filename="/Users/hasaker/Coding/Practices/ZSB/main.c">

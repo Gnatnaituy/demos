@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/cc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/ZSB.dir/main.c.o CMakeFiles/ZSB.dir/fun_result.c.o CMakeFiles/ZSB.dir/fun_fill.c.o CMakeFiles/ZSB.dir/fun_quiz.c.o  -o ZSB 
+/Library/Developer/CommandLineTools/usr/bin/cc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/ZSB.dir/main.c.o  -o ZSB 
