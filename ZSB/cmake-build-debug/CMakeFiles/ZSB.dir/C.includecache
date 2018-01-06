@@ -6,9 +6,21 @@
 
 #IncludeRegexTransform: 
 
+/Users/hasaker/Coding/Practices/ZSB/Problems/2013_exam.c
+stdio.h
+-
+
+/Users/hasaker/Coding/Practices/ZSB/Problems/fun_quiz.c
+stdio.h
+-
+
 /Users/hasaker/Coding/Practices/ZSB/main.c
 stdio.h
 -
 memory.h
 -
+Problems/2013_exam.c
+/Users/hasaker/Coding/Practices/ZSB/Problems/2013_exam.c
+Problems/fun_quiz.c
+/Users/hasaker/Coding/Practices/ZSB/Problems/fun_quiz.c
 

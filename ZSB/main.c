@@ -1,23 +1,43 @@
 #include <stdio.h>
 #include <memory.h>
-
+#include "Problems/2013_exam.c"
+#include "Problems/fun_quiz.c"
 
 
 int fun233(int x,int y)
-{ static int m=0,i=2;
+{
+    static int m=0,i=2;
     i+=m+1;
     m=i+x+y;
-    return m;
+    printf("%3d",m);
 }
 
 
 int main()
 {
-    int j=1,m=1,k;
-    k=fun233(j,m);
-    printf("%3d",k);
-    k=fun233(j,m);
-    printf("%3d",k);
+
+    practice_4();
+
+//    int i, x, y;
+//    i=x=y=0;
+//    do {
+//        ++i;
+//        if(i%2 != 0) {
+//            x = x + i;
+//            i++;
+//        }
+//        y = y + i++;
+//    } while (i <= 7);
+//    printf("%d\t%d", x, y);
+
+
+//    int *p[4];
+//    int (*q)[4];
+
+
+//    fun233(1,1);
+//    fun233(1,1);
+//    fun233(1,1);
 
 
 //    int a =0;
@@ -64,6 +84,6 @@ int main()
 //        }
 //    printf("\n%d", sum);
 
-    
+
     return 0;
 }
