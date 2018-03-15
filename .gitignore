@@ -8,6 +8,7 @@ __pycache__/
 .idea/
 migrations/
 compiler/
+out/
 *.yml
 .python-version
 .vscode/
