@@ -19,12 +19,15 @@ public class WorksAnyway {
 
 class Mouse {
     private int mouseNumber;
+
     Mouse(int i) {
         mouseNumber = i;
     }
+
     public String toString() {
         return "This is mouse #" + mouseNumber;
     }
+
     void print(String msg) {
         if(msg != null)
             P.rintln(msg);
