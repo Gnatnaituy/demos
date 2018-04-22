@@ -8,87 +8,87 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug"/>
+				<Option working_dir="/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug"/>
+				<Option working_dir="/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug"/>
+				<Option working_dir="/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ZSB">
-				<Option output="/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/ZSB" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug"/>
+				<Option output="/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/ZSB" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.1.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 ZSB"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 ZSB"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ZSB/fast">
-				<Option output="/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/ZSB" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug"/>
+				<Option output="/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/ZSB" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/9.1.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 ZSB/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/Coding/Practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 ZSB/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/hasaker/Coding/Practices/ZSB/Problems">
+		<Unit filename="/Users/hasaker/GitHub/my_practices/ZSB/Problems">
 			<Option target="ZSB"/>
 		</Unit>
-		<Unit filename="/Users/hasaker/Coding/Practices/ZSB/main.c">
+		<Unit filename="/Users/hasaker/GitHub/my_practices/ZSB/main.c">
 			<Option target="ZSB"/>
 		</Unit>
-		<Unit filename="/Users/hasaker/Coding/Practices/ZSB/CMakeLists.txt">
+		<Unit filename="/Users/hasaker/GitHub/my_practices/ZSB/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
