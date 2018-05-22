@@ -1,5 +1,5 @@
-package book.thinkinginjava.chapter06;
-import com.hasaker.tools.P;
+package main.java.book.thinkinginjava.chapter06;
+import main.java.com.hasaker.tools.P;
 
 public class CADSystem extends Shape {
     private Circle c;

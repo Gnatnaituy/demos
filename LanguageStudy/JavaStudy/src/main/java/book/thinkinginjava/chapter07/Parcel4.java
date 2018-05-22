@@ -1,4 +1,4 @@
-package book.thinkinginjava.chapter07;
+package main.java.book.thinkinginjava.chapter07;
 
 public class Parcel4 {
     public Destination dest(String s) {

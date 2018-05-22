@@ -1,9 +1,9 @@
 // :PlaceSetting.java
 // Combine Composition and Inheritance
 
-package book.thinkinginjava.chapter06;
+package main.java.book.thinkinginjava.chapter06;
 
-import com.hasaker.tools.P;
+import main.java.com.hasaker.tools.P;
 
 class Plate {
     Plate(int i) {

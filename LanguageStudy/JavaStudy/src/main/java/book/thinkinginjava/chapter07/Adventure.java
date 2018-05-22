@@ -1,4 +1,4 @@
-package book.thinkinginjava.chapter07;
+package main.java.book.thinkinginjava.chapter07;
 
 public class Adventure {
     static void t(CanFight x) {x.fight();}

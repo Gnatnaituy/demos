@@ -1,4 +1,4 @@
-package book.thinkinginjava.chapter04;
+package main.java.book.thinkinginjava.chapter04;
 
 
 class Tag {

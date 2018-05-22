@@ -1,4 +1,4 @@
-package book.thinkinginjava.chapter06;
+package main.java.book.thinkinginjava.chapter06;
 
 class WaterSource {
     private String s;

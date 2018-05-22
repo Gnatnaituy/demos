@@ -1,4 +1,4 @@
-package book.thinkinginjava.chapter08;
+package main.java.book.thinkinginjava.chapter08;
 
 // A Simple Container with Enumeration
 

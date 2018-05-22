@@ -1,7 +1,7 @@
-package book.thinkinginjava.chapter08;
+package main.java.book.thinkinginjava.chapter08;
 
 import java.util.*;
-import com.hasaker.tools.P;
+import main.java.com.hasaker.tools.P;
 
 
 public class WorksAnyway {

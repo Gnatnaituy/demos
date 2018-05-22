@@ -1,4 +1,4 @@
-package book.thinkinginjava.chapter05;
+package main.java.book.thinkinginjava.chapter05;
 
 
 public class ChocolateChip extends IceCream {

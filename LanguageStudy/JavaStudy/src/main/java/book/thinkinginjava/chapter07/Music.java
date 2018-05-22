@@ -1,5 +1,5 @@
-package book.thinkinginjava.chapter07;
-import com.hasaker.tools.P;
+package main.java.book.thinkinginjava.chapter07;
+import main.java.com.hasaker.tools.P;
 
 public class Music {
     public static void tune(Instrument i) {

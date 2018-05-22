@@ -1,4 +1,4 @@
-package com.hasaker.tools;
+package main.java.com.hasaker.tools;
 
 public class P {
     public static void rint(Object obj) {

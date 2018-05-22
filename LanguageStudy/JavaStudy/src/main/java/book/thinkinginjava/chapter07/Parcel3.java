@@ -1,4 +1,4 @@
-package book.thinkinginjava.chapter07;
+package main.java.book.thinkinginjava.chapter07;
 
 public class Parcel3 {
     private class PContents extends Contents {

@@ -1,4 +1,4 @@
-package book.thinkinginjava.chapter03;
+package main.java.book.thinkinginjava.chapter03;
 
 import java.util.*;
 
