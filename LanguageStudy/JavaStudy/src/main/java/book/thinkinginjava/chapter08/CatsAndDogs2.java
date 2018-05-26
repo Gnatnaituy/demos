@@ -6,6 +6,7 @@ import java.util.Enumeration;
 import java.util.Vector;
 
 public class CatsAndDogs2 {
+
     public static void main(String args[]) {
         Vector cats = new Vector();
         for(int i = 0; i < 7; i++)
@@ -20,6 +21,7 @@ public class CatsAndDogs2 {
 
 
 class Cat2 {
+
     private int catNumber;
     Cat2(int i) { catNumber = i; }
 
@@ -28,6 +30,7 @@ class Cat2 {
 
 
 class Dog2 {
+
     private int dogNumber;
     Dog2(int i) { dogNumber = i; }
 

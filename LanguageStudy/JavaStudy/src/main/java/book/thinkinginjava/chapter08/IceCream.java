@@ -14,7 +14,10 @@ public class IceCream {
         for(int i = 0; i < picks.length; i++) {
             retry:
             while(true) {
+                // Randomly choose flavors from flav and place them into results
                 int t = (int)(Math.random() * flav.length);
+                // Math.random() returns a double value with a positive sign,
+                // greater than or equal to 0.0 and less than 1.0.
                 for(int j = 0; j < i; j++)
                     if(picks[j] == t) continue retry;
                 picks[i] = t;

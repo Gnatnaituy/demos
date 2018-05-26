@@ -4,6 +4,7 @@ import java.util.BitSet;
 import java.util.Random;
 
 public class Bits {
+
     public static void main(String args[]) {
         Random rand = new Random();
         byte bt = (byte)rand.nextInt();
@@ -47,11 +48,11 @@ public class Bits {
         System.out.println("set bit 1023: " + b1023);
     }
 
-    static void printBitSet(BitSet b) {
+    private static void printBitSet(BitSet b) {
         System.out.println("bits: " + b);
-        String bbits = new String();
+        StringBuilder bbits = new StringBuilder();
         for(int i = 0; i < b.size(); i++)
-            bbits += (b.get(i) ? "1" : "0");
+            bbits.append(b.get(i) ? "1" : "0");
         System.out.println("bit pattern: " + bbits);
     }
 }
