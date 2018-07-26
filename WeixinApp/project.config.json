@@ -8,5 +8,6 @@
 	},
 	"appid": "wx287e96f716ac077b",
 	"projectname": "WeixinApp",
+	"compileType": "miniprogram",
 	"condition": {}
 }
