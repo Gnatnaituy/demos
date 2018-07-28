@@ -3,7 +3,7 @@ package com.example.hasaker.firstcode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class NormalActivity extends AppCompatActivity {
+public class NormalActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
