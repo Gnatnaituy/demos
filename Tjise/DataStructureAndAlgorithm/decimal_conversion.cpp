@@ -4,7 +4,6 @@
 
 #include <stdio.h>
 #include "sq_stack.h"
-#include "decimal_conversion.h"
 
 void conversion()
 {
