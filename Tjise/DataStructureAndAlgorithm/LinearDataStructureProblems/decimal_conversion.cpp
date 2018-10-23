@@ -3,7 +3,7 @@
 //
 
 #include <stdio.h>
-#include "sq_stack.h"
+#include "../LinearDataStructure/LinearDataStructure.h"
 
 void conversion()
 {

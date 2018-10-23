@@ -1,5 +1,5 @@
 #include <iostream>
-#include "sq_stack.h"
+#include "LinearDataStructure/LinearDataStructure.h"
 
 
 int main() {
