@@ -1,4 +1,4 @@
-package src.multithread;
+package multithread;
 
 class GuessANumberThread extends Thread {
     private int number;

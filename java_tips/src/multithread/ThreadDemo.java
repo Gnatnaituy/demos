@@ -1,4 +1,4 @@
-package src.multithread;
+package multithread;
 
 public class ThreadDemo {
 

@@ -1,4 +1,4 @@
-package src.multithread;
+package multithread;
 
 class MyRunnable implements Runnable {
     private Thread t;
