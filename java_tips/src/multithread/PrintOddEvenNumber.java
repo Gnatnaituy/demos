@@ -1,5 +1,6 @@
 package multithread;
 
+
 public class PrintOddEvenNumber {
     private static int cnt = 1;
     
@@ -27,7 +28,7 @@ public class PrintOddEvenNumber {
             while (true) {
                 synchronized (this) {
                     this.notify();
-                    if (cnt <= 100000000) {
+                    if (cnt <= 1000) {
                         String currentThreadName = Thread.currentThread().getName();
                         System.err.println(currentThreadName + " : " + cnt++);
                         try {

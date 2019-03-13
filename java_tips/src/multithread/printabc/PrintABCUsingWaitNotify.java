@@ -43,7 +43,7 @@ public class PrintABCUsingWaitNotify {
     }
 
     private void print(String name, int targetState, Object current, Object next)
-    throws InterruptedException {
+            throws InterruptedException {
         for (int i = 0; i < times;) {
             synchronized (current) {
                 while (state % 3 != targetState) {

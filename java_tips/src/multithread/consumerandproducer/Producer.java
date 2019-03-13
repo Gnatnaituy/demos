@@ -30,6 +30,7 @@ public class Producer implements Runnable {
         Random r = new Random();
 
         System.out.println("start produce id " + Thread.currentThread().getId());
+
         try {
             while (isRunning) {
                 // imitate delay

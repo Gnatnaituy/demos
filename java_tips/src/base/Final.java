@@ -1,18 +1,18 @@
-package keywords;
+package base;
 
 public class Final {
 
     // string: 外部类的实例变量
-    String string = "";
+    private String string = "";
 
     // ch: 方法的参数
-    void outerTest(final char ch) {
+    private void outerTest(final char ch) {
 
         // integer: 方法内局部变量
         final Integer integer = 1;
 
         new Inner() {
-            void innerTest() {
+             void innerTest() {
                 System.out.println(string);
                 System.out.println(ch);
                 System.out.println(integer);
@@ -21,10 +21,10 @@ public class Final {
     }
 
     public static void main(String[] args) {
-        new Final().outerTest(' ');
+        new Final().outerTest('H');
     }
 
-    class Inner {
+    private class Inner {
     }
 
 }

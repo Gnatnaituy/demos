@@ -45,8 +45,7 @@ public class PrintABCUsingSemaphore {
         }
     }
 
-    private void print(String name, Semaphore current, Semaphore next)
-    throws InterruptedException {
+    private void print(String name, Semaphore current, Semaphore next) throws InterruptedException {
         for (int i = 0; i < times; i++) {
             current.acquire();
             System.out.print(name);

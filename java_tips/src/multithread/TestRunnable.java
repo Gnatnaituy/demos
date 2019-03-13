@@ -12,7 +12,7 @@ class MyRunnable implements Runnable {
     public void run() {
         System.out.println("Running " + threadName);
         try {
-            for (int i = 4; i > 0; i--) {
+            for (int i = 99; i > 0; i--) {
                 System.out.println("Thread: " + threadName + ", " + i);
                 Thread.sleep(50);
             }
