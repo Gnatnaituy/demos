@@ -55,7 +55,9 @@ class CopyThread implements Runnable {
              FileOutputStream out = new FileOutputStream(dest)) {
             byte[] buffer = new byte[1024];
             int len;
-            while ((len = in.read(buffer)) > 0) out.write(buffer, 0, len);
+            while ((len = in.read(buffer)) > 0) {
+                out.write(buffer, 0, len);
+            }
 //            System.out.println("Copy " + src.getName() + " to " + dest.getName());
         } catch (IOException e) {
             e.printStackTrace();
