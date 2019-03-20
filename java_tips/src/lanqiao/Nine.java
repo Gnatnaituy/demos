@@ -9,6 +9,10 @@ public class Nine {
         LocalDate end = LocalDate.of(2000, 5, 4);
         System.out.println(end.toEpochDay() - start.toEpochDay());
         O_n();
+
+        System.out.println(win(10));
+        System.out.println(win(1));
+        System.out.println(win(4));
     }
 
     private static void O_n() {
@@ -26,5 +30,14 @@ public class Nine {
             tempB = b;
         }
         System.out.println(sum * 4);
+    }
+
+    private static boolean win(int n) {
+        if (n >= 8 && !win(n - 8)) return true;
+        if (n >= 7 && !win(n - 7)) return true;
+        if (n >= 3 && !win(n - 3)) return true;
+        if (n >= 1 && !win(n - 1)) return true;
+
+        return false;
     }
 }
