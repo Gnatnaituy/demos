@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="duke" class="com.hasaker.spring_demo.beans.Juggler"
+          c:beanBags="15" />
+
+    <bean id="deceivedByLife" class="com.hasaker.spring_demo.beans.DeceivedByLife" />
+
+    <!-- c命名空间 -->
+    <bean id="poeticJuggler" class="com.hasaker.spring_demo.beans.PoeticJuggler"
+          c:beanBags="15"
+          c:poem-ref="deceivedByLife" />
+
+    <!-- 工厂模式-->
+    <bean id="stage" class="com.hasaker.spring_demo.factories.Stage"
+          factory-method="getInstance"/>
+
+    <!-- 初始化和销毁Bean -->
+     <bean id="light" class="com.hasaker.spring_demo.beans.Light"
+           init-method="turnOnLight"
+           destroy-method="turnOffLight" />
+</beans>
