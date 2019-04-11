@@ -1,4 +1,4 @@
-package com.hasaker.spring_demo.beans;
+package com.hasaker.spring_demo.utilities;
 
 public class Light {
 

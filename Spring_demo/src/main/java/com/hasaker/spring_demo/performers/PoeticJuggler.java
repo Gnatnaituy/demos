@@ -1,6 +1,7 @@
-package com.hasaker.spring_demo.beans;
+package com.hasaker.spring_demo.performers;
 
 import com.hasaker.spring_demo.interfaces.Poem;
+import com.hasaker.spring_demo.performers.Juggler;
 
 public class PoeticJuggler extends Juggler {
     private Poem poem;

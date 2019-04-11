@@ -1,4 +1,4 @@
-package com.hasaker.spring_demo.beans;
+package com.hasaker.spring_demo.utilities;
 
 import com.hasaker.spring_demo.interfaces.Poem;
 
