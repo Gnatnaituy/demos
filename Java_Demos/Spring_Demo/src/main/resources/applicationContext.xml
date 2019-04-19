@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop">
+
+    <context:component-scan base-package="com.hasaker.spring_demo">
+        <!-- 过滤组件扫描 -->
+        <context:exclude-filter type="annotation" expression="com.hasaker.spring_demo.annotations.SkipIt"/>
+    </context:component-scan>
+
+    <bean id="duke" class="com.hasaker.spring_demo.performers.Juggler"
+          c:beanBags="15"/>
+
+    <bean id="deceivedByLife" class="com.hasaker.spring_demo.utilities.DeceivedByLife"/>
+
+    <!-- c命名空间 -->
+    <bean id="poeticJuggler" class="com.hasaker.spring_demo.performers.PoeticJuggler"
+          c:beanBags="15" c:poem-ref="deceivedByLife"/>
+
+    <!-- 工厂模式-->
+    <bean id="stage" class="com.hasaker.spring_demo.factories.Stage"
+          factory-method="getInstance"/>
+
+    <!-- 初始化和销毁Bean -->
+    <bean id="light" class="com.hasaker.spring_demo.utilities.Light"
+          init-method="turnOnLight"
+          destroy-method="turnOffLight"/>
+
+    <!-- setter注入简单值 -->
+    <bean id="kenny" class="com.hasaker.spring_demo.performers.Instrumentalist">
+        <property name="song" value="Mockingbird"/>
+        <!-- 注入内部Bean kenny私有 无法被别的类看到 -->
+        <property name="instrument">
+            <bean class="com.hasaker.spring_demo.utilities.Piano"/>
+        </property>
+    </bean>
+
+    <!-- 装配集合 -->
+    <bean id="piano" class="com.hasaker.spring_demo.utilities.Piano"/>
+    <bean id="guitar" class="com.hasaker.spring_demo.utilities.Guitar"/>
+    <bean id="saxophone" class="com.hasaker.spring_demo.utilities.Saxophone"/>
+
+    <!-- List类型集合 -->
+    <bean id="hank" class="com.hasaker.spring_demo.performers.OneManBan">
+        <property name="instruments">
+            <list>
+                <ref bean="piano"/>
+                <ref bean="guitar"/>
+                <ref bean="saxophone"/>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Map类型集合 -->
+    <bean id="dody" class="com.hasaker.spring_demo.performers.OneManBan">
+        <property name="instrumentsMap">
+            <map>
+                <entry key="piano" value-ref="piano"/>
+                <entry key="guitar" value-ref="guitar"/>
+                <entry key="saxophone" value-ref="saxophone"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 当key和value都是String类型的时候，我们可以使用Properties来代替Map -->
+    <bean id="eminem" class="com.hasaker.spring_demo.performers.OneManBan">
+        <property name="instrumentsPro">
+            <props>
+                <prop key="piano">Play the Piano</prop>
+                <prop key="guitar">Play the Guitar</prop>
+                <prop key="saxophone">Play the Saxophone</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- SpEL表达式 -->
+    <!-- carl模仿kenny唱歌 -->
+    <bean id="carl" class="com.hasaker.spring_demo.performers.Instrumentalist">
+        <property name="song" value="#{kenny.song}"/>
+        <property name="instrument" value="#{kenny.instrument}"/>
+    </bean>
+
+    <util:list id="cities">
+        <bean class="com.hasaker.spring_demo.commonbeans.City"
+              p:name="Chicago" p:state="IL" p:population="2853114"/>
+        <bean class="com.hasaker.spring_demo.commonbeans.City"
+              p:name="Atlanta" p:state="GA" p:population="537958"/>
+        <bean class="com.hasaker.spring_demo.commonbeans.City"
+              p:name="Dallas" p:state="TX" p:population="1279910"/>
+        <bean class="com.hasaker.spring_demo.commonbeans.City"
+              p:name="Houston" p:state="TX" p:population="2242193"/>
+        <bean class="com.hasaker.spring_demo.commonbeans.City"
+              p:name="Odessa" p:state="TX" p:population="90943"/>
+        <bean class="com.hasaker.spring_demo.commonbeans.City"
+              p:name="El Paso" p:state="TX" p:population="613190"/>
+        <bean class="com.hasaker.spring_demo.commonbeans.City"
+              p:name="Jal" p:state="NM" p:population="1996"/>
+        <bean class="com.hasaker.spring_demo.commonbeans.City"
+              p:name="Las Cruces" p:state="NM" p:population="91865"/>
+    </util:list>
+
+    <!-- 选择第一个城市 -->
+    <bean id="chooseCity" class="com.hasaker.spring_demo.commonbeans.ChooseCity">
+        <property name="city" value="#{cities[0]}" />
+    </bean>
+
+    <!-- 随机选择一个城市 -->
+    <bean id="randomChooseCity" class="com.hasaker.spring_demo.commonbeans.ChooseCity">
+        <property name="city" value="#{cities[T(java.lang.Math).random() * cities.size()]}" />
+    </bean>
+
+    <!-- 查询集合中人口大于10000的城市 -->
+    <bean id="chooseCities" class="com.hasaker.spring_demo.commonbeans.ChooseCities">
+        <!-- .?[] 查询集合中符合条件的所有元素
+             .^[] 查询集合中符合条件的第一个元素
+             .$[] 查询集合中符合条件的最后一个元素
+             .![] 用于投影集合  -->
+        <property name="cities" value="#{cities.?[population >= 10000]}" />
+    </bean>
+
+
+
+    <!-- AOP -->
+    <bean id="audience" class="com.hasaker.spring_demo.performers.Audience" />
+    <bean id="magician" class="com.hasaker.spring_demo.performers.Magician" />
+    <bean id="volunteer" class="com.hasaker.spring_demo.performers.Volunteer" />
+
+    <!-- 顶层的AOP配置元素 -->
+    <aop:config proxy-target-class="true">
+        <!-- 定义切面 -->
+        <aop:aspect ref="audience">
+            <!-- 定义切点 -->
+            <aop:pointcut id="performance"
+                          expression="execution(* com.hasaker.spring_demo.interfaces.Performer.perform(..))"/>
+            <!-- 定义AOP通知 -->
+<!--            <aop:before pointcut-ref="performance" method="takeSeats" />-->
+<!--            <aop:before pointcut-ref="performance" method="turnOffCellPhone" />-->
+<!--            <aop:after-returning pointcut-ref="performance" method="applaud" />-->
+<!--            <aop:after-throwing pointcut-ref="performance" method="performFailed" />-->
+            <!-- 定义环绕通知 -->
+            <!-- 环绕通知相对于AOP通知有利于前置通知和后置通知之间共享信息 -->
+            <aop:around method="watch" pointcut-ref="performance" />
+        </aop:aspect>
+
+        <!-- 为通知传递参数 -->
+        <aop:aspect ref="magician">
+            <aop:pointcut id="thinking"
+                          expression="execution(*
+                          com.hasaker.spring_demo.performers.Volunteer.thinkOfSomething(String))
+                          and args(thoughts)"/>
+            <aop:before method="interceptThoughts" arg-names="thoughts" pointcut-ref="thinking" />
+        </aop:aspect>
+
+        <!-- 通过切面引入新的方法 -->
+<!--        <aop:aspect>-->
+<!--            <aop:declare-parents types-matching="com.hasaker.spring_demo.interfaces.Performer+"-->
+<!--                                 implement-interface="com.hasaker.spring_demo.interfaces.Contestant"-->
+<!--                                 default-impl="com.hasaker.spring_demo.performers.OutstandingContestant" />-->
+<!--        </aop:aspect>-->
+    </aop:config>
+</beans>
