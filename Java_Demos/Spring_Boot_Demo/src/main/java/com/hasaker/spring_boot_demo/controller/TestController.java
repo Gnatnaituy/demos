@@ -3,7 +3,6 @@ package com.hasaker.spring_boot_demo.controller;
 
 import com.hasaker.spring_boot_demo.bean.User;
 import com.hasaker.spring_boot_demo.service.UserService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;

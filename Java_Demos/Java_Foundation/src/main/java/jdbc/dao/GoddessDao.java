@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GoddessDao {
-    private MySQLDataSource dataSource = null;
+    private MySQLDataSource dataSource;
 
     public GoddessDao() {
         dataSource = new MySQLDataSource();

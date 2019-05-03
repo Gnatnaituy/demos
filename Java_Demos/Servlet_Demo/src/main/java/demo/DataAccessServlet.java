@@ -1,6 +1,7 @@
 package demo;
 
 import demo.utility.ConnectionFactory;
+import jdbc.DBUtilities;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,36 +20,45 @@ public class DataAccessServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         String sql = "select * from imooc_goddess";
+        PrintWriter out = null;
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
 
         String title = "数据库结果";
         String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
 
-        try (PrintWriter out = response.getWriter();
-             Connection connection = factory.makeConnection();
-             Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery(sql)) {
-
+        try {
+            connection = factory.makeConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);
+            out = response.getWriter();
+            
             out.println(docType +
                     "<html>\n" +
                     "<head><title>" + title + "</title></head>\n" +
-                    "<body bgcolor=\"#f0f0f0\">\n" +
+                    "<body>\n" +
                     "<h1 align=\"center\">" + title + "</h1>\n");
 
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
-                String username = resultSet.getString("username");
+                String username = resultSet.getString("name");
                 int age = resultSet.getInt("age");
-                String password = resultSet.getString("password");
+                String password = resultSet.getString("email");
 
-                out.println("ID: " + id + "<br>");
-                out.println("USERNAME: " + username + "<br>");
-                out.println("AGE: " + age + "<br>");
-                out.println("PASSWORD: " + password + "<br>");
+                out.print("ID: " + id + " ");
+                out.print("NAME: " + username + " ");
+                out.print("AGE: " + age + " ");
+                out.print("EMAIL: " + password + " ");
+                out.println("<br>");
             }
 
             out.println("</body></html>");
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            if (out != null) out.close();
+            DBUtilities.closeConnections(resultSet, statement, connection);
         }
     }
 }
