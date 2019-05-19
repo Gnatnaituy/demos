@@ -24,9 +24,8 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public int add(User user) {
-        String sql = "insert into user_info(username, age, password) "
-                + "values(:username, :age, :password)";
-        NamedParameterJdbcTemplate npjt = new NamedParameterJdbcTemplate(this.jdbcTemplate.getDataSource());
+        String sql = "insert into user_info(username, age, password) values(:username, :age, :password)";
+        NamedParameterJdbcTemplate npjt = new NamedParameterJdbcTemplate(jdbcTemplate.getDataSource());
 
         return npjt.update(sql, new BeanPropertySqlParameterSource(user));
     }
@@ -37,7 +36,7 @@ public class UserDaoImpl implements UserDao {
         Object[] args = {user.getUsername(), user.getAge(), user.getPassword(), user.getId()};
         int[] argTypes = {Types.VARCHAR, Types.INTEGER, Types.VARCHAR, Types.INTEGER};
 
-        return this.jdbcTemplate.update(sql, args, argTypes);
+        return jdbcTemplate.update(sql, args, argTypes);
     }
 
     @Override
@@ -46,14 +45,14 @@ public class UserDaoImpl implements UserDao {
         Object[] args = {username};
         int[] argTypes = {Types.VARCHAR};
 
-        return this.jdbcTemplate.update(sql, args, argTypes);
+        return jdbcTemplate.update(sql, args, argTypes);
     }
 
     @Override
     public List<Map<String, Object>> queryUserListMap() {
         String sql = "select * from user_info";
 
-        return this.jdbcTemplate.queryForList(sql);
+        return jdbcTemplate.queryForList(sql);
     }
 
     @Override
@@ -63,10 +62,6 @@ public class UserDaoImpl implements UserDao {
         int[] argTypes = {Types.VARCHAR};
         List<User> userList = this.jdbcTemplate.query(sql, args, argTypes, new UserMapper());
 
-        if (userList != null && userList.size() > 0) {
-            return userList.get(0);
-        } else {
-            return null;
-        }
+        return userList != null && userList.size() > 0 ? userList.get(0) : null;
     }
 }
