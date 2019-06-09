@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+</head>
+<body>
+    <div align="center">
+        <table border="1">
+            <tr>
+                <th>员工编号</th>
+                <th>员工姓名</th>
+                <th>职位</th>
+                <th>上级员工编号</th>
+                <th>入职日期</th>
+                <th>薪水</th>
+                <th>津贴</th>
+                <th>部门编号</th>
+                <th>操作</th>
+            </tr>
+            <tr th:each="employee : ${employeeList}">
+                <td th:text="${employee.get('empno')}"></td>
+                <td th:text="${employee.get('ename')}"></td>
+                <td th:text="${employee.get('job')}"></td>
+                <td th:text="${employee.get('mgr')}"></td>
+                <td th:text="${employee.get('hiredate')}"></td>
+                <td th:text="${employee.get('sal')}"></td>
+                <td th:text="${employee.get('comm')}"></td>
+                <td th:text="${employee.get('deptno')}"></td>
+                <td>
+                    <a th:href="@{|query/${employee.get('empno')}|}" target="_self">查看</a>
+                    <a th:href="@{|update/${employee.get('empno')}|}" target="_self">修改</a>
+                    <a th:href="@{|delete/${employee.get('empno')}|}" target="_self">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td><a th:href="@{add}">添加</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
