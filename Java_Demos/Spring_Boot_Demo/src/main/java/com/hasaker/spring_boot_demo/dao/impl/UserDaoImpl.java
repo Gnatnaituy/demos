@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.Types;
 import java.util.List;
-import java.util.Map;
+import java.util.Objects;
 
 
 @Repository("userDao")
@@ -24,15 +24,16 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public int add(User user) {
-        String sql = "insert into user_info(username, age, password) values(:username, :age, :password)";
-        NamedParameterJdbcTemplate npjt = new NamedParameterJdbcTemplate(jdbcTemplate.getDataSource());
+        String sql = "insert into users(username, age, password) values(:username, :age, :password)";
+        NamedParameterJdbcTemplate npjt = new NamedParameterJdbcTemplate(
+                Objects.requireNonNull(jdbcTemplate.getDataSource()));
 
         return npjt.update(sql, new BeanPropertySqlParameterSource(user));
     }
 
     @Override
     public int update(User user) {
-        String sql = "update user_info set username = ?, age = ?, password = ? where id = ?";
+        String sql = "update users set username = ?, age = ?, password = ? where id = ?";
         Object[] args = {user.getUsername(), user.getAge(), user.getPassword(), user.getId()};
         int[] argTypes = {Types.VARCHAR, Types.INTEGER, Types.VARCHAR, Types.INTEGER};
 
@@ -41,23 +42,21 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public int deleteByUsername(String username) {
-        String sql = "delete from user_info where username = ?";
-        Object[] args = {username};
-        int[] argTypes = {Types.VARCHAR};
+        String sql = "delete from users where username = ?";
 
-        return jdbcTemplate.update(sql, args, argTypes);
+        return jdbcTemplate.update(sql, new Object[]{username}, new int[Types.VARCHAR]);
     }
 
     @Override
-    public List<Map<String, Object>> queryUserListMap() {
-        String sql = "select * from user_info";
+    public List<User> queryAll() {
+        String sql = "select * from users";
 
-        return jdbcTemplate.queryForList(sql);
+        return jdbcTemplate.query(sql, new UserMapper());
     }
 
     @Override
     public User queryUserByUsername(String username) {
-        String sql = "select * from user_info where username = ?";
+        String sql = "select * from users where username = ?";
         Object[] args = {username};
         int[] argTypes = {Types.VARCHAR};
         List<User> userList = this.jdbcTemplate.query(sql, args, argTypes, new UserMapper());

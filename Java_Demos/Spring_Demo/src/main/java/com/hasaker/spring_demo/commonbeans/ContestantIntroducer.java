@@ -9,7 +9,6 @@ import org.aspectj.lang.annotation.DeclareParents;
 @Aspect
 public class ContestantIntroducer {
 
-    @DeclareParents(value = "com.hasaker.spring_demo.interfaces.Performer+",
-                    defaultImpl = OutstandingContestant.class)
+    @DeclareParents(value = "com.hasaker.spring_demo.interfaces.Performer+", defaultImpl = OutstandingContestant.class)
     public static Contestant contestant;
 }

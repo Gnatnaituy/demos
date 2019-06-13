@@ -6,7 +6,6 @@ import com.hasaker.spring_boot_demo.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
 
 @Service("userService")
@@ -34,8 +33,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<Map<String, Object>> queryUserListMap() {
-        return this.userDao.queryUserListMap();
+    public List<User> queryAll() {
+        return this.userDao.queryAll();
     }
 
     @Override

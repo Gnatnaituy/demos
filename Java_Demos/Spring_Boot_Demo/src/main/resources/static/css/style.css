@@ -4,8 +4,8 @@ table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    table-layout: automatic;
-    word-wrap: break-all
+    table-layout: auto;
+    word-wrap: break-spaces;
 }
 table>tbody>tr:nth-of-type(odd) {
     background-color: #F7F7F7
