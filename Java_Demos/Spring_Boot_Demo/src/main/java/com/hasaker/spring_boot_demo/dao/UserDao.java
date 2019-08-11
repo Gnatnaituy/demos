@@ -10,5 +10,4 @@ public interface UserDao {
     int deleteByUsername(String username);
     List<User> queryAll();
     User queryUserByUsername(String username);
-
 }

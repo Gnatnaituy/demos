@@ -18,12 +18,14 @@ public class IteratorDemo {
         List<Integer> intList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 0));
         Iterator<Integer> itrOne = intList.iterator();
         Iterator<Integer> itrTwo = intList.iterator();
+
         for (; itrOne.hasNext();) {
             if (itrOne.next().equals(5)) {
                 itrOne.remove(); // #1
                 //intList.remove(itrOne.next()); // #2
             }
         }
+
         for (; itrTwo.hasNext();) {
             if (itrTwo.next().equals(5)) {
                 itrTwo.remove(); // #1

@@ -12,26 +12,32 @@ import java.util.List;
 public class ReflectDemo {
     private static final String TAG = "Reflection";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+//        getClassMethods();
         testReflection();
     }
 
     public static void getClassMethods() throws ClassNotFoundException {
         // 1.通过对象实例获取对应Class对象Object.getClass()--对于基本类型无法使用这种方法
+        System.out.println();
         System.out.println("foo".getClass());
         System.out.println(byte[].class);
         System.out.println(HashSet.class);
 
         // 2.通过类的类型获取Class对象,基本类型同样可以使用这种方法
+        System.out.println();
         System.out.println(boolean.class);
         System.out.println(int.class);
+        System.out.println(double[][][][].class);
 
         // 3.通过类的全限定名获取Class对象， 基本类型无法使用此方法
-        Class c = Class.forName("java.lang.String"); //通过Class.forName()方法加载的类，采用的是系统类加载器对于数组比较特殊
-        Class cDoubleArray = Class.forName("[D");    //相当于double[].class
-        Class cStringArray = Class.forName("[[Ljava.lang.String;");   //相当于String[][].class
+        System.out.println();
+        System.out.println(Class.forName("java.lang.String")); //通过Class.forName()方法加载的类，采用的是系统类加载器对于数组比较特殊
+        System.out.println(Class.forName("[D"));    //相当于double[].class
+        System.out.println(Class.forName("[[Ljava.lang.String;"));   //相当于String[][].class
 
         // 5.基本类型和void 类型的包装类可以使用TYPE字段获取
+        System.out.println();
         System.out.println(Double.TYPE);
         System.out.println(Void.TYPE);
 
