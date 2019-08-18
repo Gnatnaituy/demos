@@ -10,7 +10,7 @@ public class ForEachDemo {
         List<String> userNames = new ArrayList<>() {{
             add("Eminem");
             add("Hasaker");
-            add("Marhall");
+            add("Marshall");
             add("Dia");
             add("La");
         }};

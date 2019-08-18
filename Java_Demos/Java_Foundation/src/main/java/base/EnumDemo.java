@@ -1,5 +1,7 @@
 package base;
 
+import java.util.HashMap;
+
 public class EnumDemo {
 
     public enum Direction {
