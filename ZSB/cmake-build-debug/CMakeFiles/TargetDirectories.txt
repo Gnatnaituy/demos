@@ -1,3 +1,0 @@
-/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/hasaker/GitHub/my_practices/ZSB/cmake-build-debug/CMakeFiles/ZSB.dir

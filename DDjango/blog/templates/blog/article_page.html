@@ -1,8 +1,0 @@
-{% extends 'blog/index.html' %}
-{% load md2 %}
-
-{% block main %}
-<h3><div style="text-align:center;">{{ article.title }}</div></h3><hr/>
-<div>{{ article.content | markdown }}</div><hr/>
-<div style="text-align: right"> Read: {{ article.watch_num }} Poll: {{ article.poll_num }} Comment: {{ article.comment_num }}</div>
-{% endblock %}
