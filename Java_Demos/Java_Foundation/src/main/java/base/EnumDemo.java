@@ -1,7 +1,5 @@
 package base;
 
-import java.util.HashMap;
-
 public class EnumDemo {
 
     public enum Direction {
@@ -17,10 +15,9 @@ public class EnumDemo {
             return angle;
         }
 
-        protected String printDirection() {
+        protected void printDirection() {
             String message = "You are moving in " + this + " direction";
             System.out.println(message);
-            return message;
         }
 
     }
@@ -36,7 +33,7 @@ public class EnumDemo {
         // The enum values() method returns all the enum values in an enum array.
         Direction[] directions = Direction.values();
         for (Direction d : directions) {
-            System.out.println(d);
+            System.out.print(d + " ");
         }
 
         // The enum valueOf() method helps to convert string to enum instance.

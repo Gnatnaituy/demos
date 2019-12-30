@@ -5,7 +5,7 @@ package base;
  * @create_date 2019-08-12 15:54
  * @description
  */
-public class ExceptionDEmo {
+public class ExceptionDemo {
 
     public static void main(String[] args) {
         String[] students = {"aaa", "bbb", "ccc"};

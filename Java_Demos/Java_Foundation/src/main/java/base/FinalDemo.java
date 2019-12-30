@@ -1,6 +1,6 @@
 package base;
 
-public class Final {
+public class FinalDemo {
 
     // string: 外部类的实例变量
     private String string = "";
@@ -21,7 +21,7 @@ public class Final {
     }
 
     public static void main(String[] args) {
-        new Final().outerTest('H');
+        new FinalDemo().outerTest('H');
     }
 
     private class Inner {

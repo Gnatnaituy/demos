@@ -22,7 +22,7 @@ public class MySQLDataSource implements DataSource {
     }
 
     @Override
-    public Connection getConnection() throws SQLException {
+    public Connection getConnection() {
         final Connection connection = dataSource.removeFirst();
 
         return (Connection) Proxy.newProxyInstance(connection.getClass().getClassLoader(),

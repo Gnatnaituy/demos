@@ -1,6 +1,8 @@
 package base;
 
 
+import java.util.List;
+
 public class GenericDemo {
 
     // Generic method -> printArray
@@ -40,6 +42,10 @@ public class GenericDemo {
     static class Box<T> {
         private T t;
 
+        Box(T t) {
+            this.t = t;
+        }
+
         void set(T t) {
             this.t = t;
         }
@@ -70,17 +76,11 @@ public class GenericDemo {
         System.out.printf("%s, %s 和 %s 中最大的数为 %s\n",
                 "apple", "dog", "shit", maximum("apple", "dog", "shit"));
 
-        Box<Integer> integerBox = new Box<>();
-        Box<Double> doubleBox = new Box<>();
-        Box<String> stringBox = new Box<>();
-        integerBox.set(100);
-        doubleBox.set(10000.00);
-        stringBox.set("Nice shit");
-        System.out.println(integerBox.get());
-        System.out.println(doubleBox.get());
-        System.out.println(stringBox.get());
-        getData(integerBox);
-        getData(doubleBox);
-        getData(stringBox);
+        Box<Integer> integerBox = new Box<>(100);
+        Box<Double> doubleBox = new Box<>(1000.00);
+        Box<String> stringBox = new Box<>("Nice Shit!");
+        List<Box> boxes = List.of(integerBox, doubleBox, stringBox);
+        boxes.forEach(box -> System.out.println(box.get()));
+        boxes.forEach(GenericDemo::getData);
     }
 }

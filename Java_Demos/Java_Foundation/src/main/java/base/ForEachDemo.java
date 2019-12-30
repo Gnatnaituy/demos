@@ -21,6 +21,22 @@ public class ForEachDemo {
             }
         }
 
+        // throw java.util.ConcurrentModificationException
+//        userNames.forEach(o -> {
+//            if (o.equals("La")) {
+//                userNames.remove(o);
+//            }
+//        });
+
         System.out.println(userNames);
+
+
+        // List.of从给定的参数创建了一个新的不可变列表
+        // List.copyOf创建列表的不可变副本
+        List<String> sizes = new ArrayList<>(List.of("Big", "Medium", "Small"));
+        var sizesCopy = List.copyOf(sizes);
+        System.out.println(sizesCopy);
+        sizes.removeIf(o -> o.equals("Small"));
+        System.out.println(sizes);
     }
 }
