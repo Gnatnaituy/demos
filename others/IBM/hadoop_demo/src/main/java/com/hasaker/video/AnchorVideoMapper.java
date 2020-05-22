@@ -9,13 +9,11 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class AnchorVideoMapper extends Mapper<LongWritable, Text, Text, VideoInfoWritable> {
-    private Text k2 = new Text();
-    private VideoInfoWritable v2 = new VideoInfoWritable();
+    private final Text k2 = new Text();
+    private final VideoInfoWritable v2 = new VideoInfoWritable();
 
     @Override
-    protected void map(
-            LongWritable k1,
-            Text v1,
+    protected void map(LongWritable k1, Text v1,
             Mapper<LongWritable, Text, Text, VideoInfoWritable>.Context context)
             throws IOException, InterruptedException {
         String line = v1.toString();
