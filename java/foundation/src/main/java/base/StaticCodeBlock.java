@@ -6,6 +6,7 @@ package base;
  * @description
  */
 public class StaticCodeBlock extends Parent {
+
     static {
         System.out.println("Son 静态代码块");
     }

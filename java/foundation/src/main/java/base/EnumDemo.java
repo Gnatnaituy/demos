@@ -1,5 +1,8 @@
 package base;
 
+/**
+ * @author hasaker
+ */
 public class EnumDemo {
 
     public enum Direction {
@@ -27,8 +30,8 @@ public class EnumDemo {
         System.out.println(north);
 
         // The ordinal() method returns the order of an enum instance.
-        System.out.println(Direction.NORTH.ordinal());  // 2
-        System.out.println(north.ordinal());            // 2
+        System.out.println(Direction.NORTH.ordinal());
+        System.out.println(north.ordinal());
 
         // The enum values() method returns all the enum values in an enum array.
         Direction[] directions = Direction.values();

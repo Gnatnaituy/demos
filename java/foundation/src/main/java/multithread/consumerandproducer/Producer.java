@@ -17,7 +17,7 @@ public class Producer implements Runnable {
     private final int SIZE;
 
     // producing data
-    private static AtomicInteger count = new AtomicInteger();
+    private static final AtomicInteger count = new AtomicInteger();
 
     Producer(Vector sharedQueue, int SIZE) {
         this.sharedQueue = sharedQueue;

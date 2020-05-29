@@ -8,17 +8,20 @@ import java.util.concurrent.Semaphore;
  * @description
  */
 public class CustomerCheckWindow {
-    public static void main(String[] args) {
-        Semaphore semaphore = new Semaphore(3);
 
-        for (int i = 1; i < 6; i++) {
+    private static final int CUSTOMER_COUNT = 15;
+
+    public static void main(String[] args) {
+        Semaphore semaphore = new Semaphore(5);
+
+        for (int i = 1; i < CUSTOMER_COUNT; i++) {
             new SecurityCheckThread(i, semaphore).start();
         }
     }
 
     private static class SecurityCheckThread extends Thread {
-        private int seq;
-        private Semaphore semaphore;
+        private final int seq;
+        private final Semaphore semaphore;
 
         SecurityCheckThread(int seq, Semaphore semaphore) {
             this.seq = seq;
