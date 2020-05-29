@@ -1,4 +1,4 @@
-package com.hasaker.zookeeper_demo.zookeeper;
+package com.hasaker.zookeeper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.AsyncCallback;
@@ -6,7 +6,7 @@ import org.apache.zookeeper.AsyncCallback;
 /**
  * @author 余天堂
  * @since 2019/11/30 22:28
- * @description 
+ * @description
  */
 @Slf4j
 public class DemoStringCallback implements AsyncCallback.StringCallback {

@@ -1,4 +1,4 @@
-package com.hasaker.zookeeper_demo.zookeeper;
+package com.hasaker.zookeeper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;
@@ -65,7 +65,8 @@ public class ZookeeperConstructor implements Watcher {
         log.info("Children for /demo: {}", children);
 
         for (int i = 4; i < 10; i++) {
-            zooKeeper.create("/demo/child_sequential_" + i, ("data" + i + "").getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT_SEQUENTIAL);
+            zooKeeper.create("/demo/child_sequential_" + i, ("data" + i + "").getBytes(),
+                    ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT_SEQUENTIAL);
         }
 
         // Get children node list by asynchronous API
