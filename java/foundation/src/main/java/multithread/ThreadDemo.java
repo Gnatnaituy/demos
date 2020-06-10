@@ -12,13 +12,14 @@ public class ThreadDemo {
 
 class MyThread extends Thread {
     private Thread t;
-    private String threadName;
+    private final String threadName;
     
     MyThread(String name) {
         threadName = name;
         System.out.println("Creating " + threadName);
     }
-    
+
+    @Override
     public void run() {
         System.out.println("Running " + threadName);
         try {
@@ -31,12 +32,13 @@ class MyThread extends Thread {
         }
         System.out.println("Thread " + threadName + " exiting");
     }
-    
+
+    @Override
     public void start() {
         System.out.println("Starting " + threadName);
         if (t == null) {
             t = new Thread(this, threadName);
-            t.start();
         }
+        t.start();
     }
 }

@@ -1,6 +1,6 @@
 package multithread;
 
-public class TestJoin {
+public class JoinDemo {
 
     public static void main(String[] args) {
         System.out.println(Thread.currentThread().getName() + " start running");
@@ -39,7 +39,7 @@ public class TestJoin {
 
 
 class JoinThread implements Runnable {
-    private String name;
+    private final String name;
 
     JoinThread(String name) {
         this.name = name;

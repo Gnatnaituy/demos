@@ -1,7 +1,7 @@
 package multithread;
 
 class GuessANumberThread extends Thread {
-    private int number;
+    private final int number;
     
     GuessANumberThread(int number) {
         this.number = number;
@@ -25,6 +25,6 @@ public class GuessANumber {
     
     public static void main(String[] args) {
         GuessANumberThread t1 = new GuessANumberThread(99);
-        t1.run();
+        t1.start();
     }
 }

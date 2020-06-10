@@ -15,7 +15,7 @@ public class DeadLockDemo {
     public static void main(String[] args) {
         new Thread(() -> {
             synchronized (RESOURCE1) {
-                System.out.println(Thread.currentThread() + " get resource 1");
+                System.out.println(Thread.currentThread() + " get resource1");
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {

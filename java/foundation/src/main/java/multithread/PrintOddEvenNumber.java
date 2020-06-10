@@ -5,7 +5,7 @@ public class PrintOddEvenNumber {
     private static int cnt = 1;
     
     public static void main(String[] args) {
-        EvenOddNumberThead myThread = new EvenOddNumberThead();
+        EvenOddNumberThread myThread = new EvenOddNumberThread();
         
         Thread t1 = new Thread(myThread);
         Thread t2 = new Thread(myThread);
@@ -21,7 +21,7 @@ public class PrintOddEvenNumber {
         }
     }
     
-    private static class EvenOddNumberThead extends Thread {
+    private static class EvenOddNumberThread extends Thread {
         
         @Override
         public void run() {
