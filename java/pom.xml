@@ -24,6 +24,9 @@
         <module>spring_boot_demo</module>
         <module>kafka_demo</module>
         <module>zookeeper_demo</module>
+        <module>hadoop_demo</module>
+        <module>hbase_demo</module>
+        <module>spark_demo</module>
     </modules>
 
 </project>
