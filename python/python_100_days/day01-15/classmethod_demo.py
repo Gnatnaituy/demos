@@ -1,9 +1,10 @@
 from time import time, localtime, sleep
 
+
 class Clock(object):
     """数字时钟"""
 
-    def __init__(self, hour = 0, minute = 0, second = 0):
+    def __init__(self, hour=0, minute=0, second=0):
         self._hour = hour
         self._minute = minute
         self._second = second
