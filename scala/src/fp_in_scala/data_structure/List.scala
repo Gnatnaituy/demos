@@ -30,6 +30,15 @@ object List {
         else Cons(list.head, apply(list.tail: _*))
     }
 
+    def foldRight[A, B](list: List[A], defaultValue: B)(func: (A, B) => B): B = list match {
+        case Nil => defaultValue
+        case Cons(head, tail) => func(head, foldRight(tail, defaultValue)(func))
+    }
+
+    def sum2(list: List[Int]): Int = foldRight(list, 0)(_ + _)
+
+    def product2(list: List[Double]): Double = foldRight(list, 1.0)(_ * _)
+
     /**
      * practice 3.2
      * @param list
@@ -77,8 +86,14 @@ object List {
      * @return
      */
     @scala.annotation.tailrec
-    def dropWhile[A](list: List[A], func: A => Boolean): List[A] = list match {
-        case Cons(head, tail) if func(head) => dropWhile(tail, func)
+    def dropWhile1[A](list: List[A], func: A => Boolean): List[A] = list match {
+        case Cons(head, tail) if func(head) => dropWhile1(tail, func)
+        case _ => list
+    }
+
+    @scala.annotation.tailrec
+    def dropWhile2[A](list: List[A])(func: A => Boolean): List[A] = list match {
+        case Cons(head, tail) if func(head) => dropWhile2(tail)(func)
         case _ => list
     }
 
@@ -108,11 +123,18 @@ object List {
         go(list)
     }
 
-
+    /**
+     * practice 3.9
+     * @param list
+     * @tparam A
+     * @return
+     */
+    def length[A](list: List[A]): Int = foldRight(list, 0)((_, acc) => acc + 1)
 
 
     def main(args: Array[String]): Unit = {
         val list = List(1, 2, 3, 4, 5)
+        val doubleList = List(1.0, 2.0, 3.0, 4.0, 5.0)
         val x = list match {
             case Cons(x, Cons(2, Cons(4, _))) => x
             case Nil => 42
@@ -121,6 +143,12 @@ object List {
             case _ => 101
         }
         println(x)
+
+        println("sum --> " + sum(list))
+        println("sum2 --> " + sum2(list))
+
+        println("product --> " + product(doubleList))
+        println("product2 --> " + product2(doubleList))
 
         val tailed = tail(list)
         println(tailed)
@@ -131,11 +159,14 @@ object List {
         val draped = drop(list, 2)
         println(draped)
 
-        val dropWhiled = dropWhile(list, (element: Int) => element % 2 == 0)
-        println(dropWhiled)
+        val dropWhiled1 = dropWhile1(list, (element: Int) => element % 2 == 0)
+        val dropWhiled2 = dropWhile2(list)(x => x % 2 == 0)
+        println("dropWhile1 --> " + dropWhiled1)
+        println("dropWhile2 --> " + dropWhiled2)
 
         val inited = init(list)
         val inited2 = init2(list)
-        println(inited, inited2)
+        println("inited --> " + inited)
+        println("inited2 --> " + inited2)
     }
 }
