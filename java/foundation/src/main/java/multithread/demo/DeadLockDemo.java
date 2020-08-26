@@ -1,4 +1,4 @@
-package multithread;
+package multithread.demo;
 
 import java.util.concurrent.*;
 

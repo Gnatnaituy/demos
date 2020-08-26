@@ -1,12 +1,12 @@
-package multithread.printabc;
+package multithread.demo.printabc;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class PrintABCUsingLock {
-    private int times;
+    private final int times;
     private int state;
-    private Lock lock = new ReentrantLock();
+    private final Lock lock = new ReentrantLock();
 
     private PrintABCUsingLock(int times) {
         this.times = times;

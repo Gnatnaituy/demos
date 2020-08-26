@@ -1,4 +1,4 @@
-package multithread.printabc;
+package multithread.demo.printabc;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

@@ -1,4 +1,4 @@
-package multithread;
+package multithread.fundation;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;

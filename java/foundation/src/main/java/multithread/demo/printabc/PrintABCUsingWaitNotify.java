@@ -1,4 +1,4 @@
-package multithread.printabc;
+package multithread.demo.printabc;
 
 public class PrintABCUsingWaitNotify {
     private int times;
