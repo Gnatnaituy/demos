@@ -1,12 +1,16 @@
 package multithread.fundation;
 
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+
 public class RunnableDemo {
 
     public static void main(String[] args) {
         MyRunnable r1 = new MyRunnable("Thread-1");
-        r1.start();
         MyRunnable r2 = new MyRunnable("Thread-2");
+        MyRunnable r3 = new MyRunnable("Thread-3");
         r2.start();
+        r1.start();
+        r3.start();
     }
 
     static class MyRunnable implements Runnable {
@@ -38,5 +42,7 @@ public class RunnableDemo {
             }
             System.out.println(threadName + " exiting.");
         }
+
+        AbstractQueuedSynchronizer
     }
 }

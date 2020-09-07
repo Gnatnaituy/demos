@@ -16,7 +16,7 @@ object Polymorphic {
     }
 
     def main(args: Array[String]): Unit = {
-        println(isSorted(Array(1, 2, 3, 4, 5), (a: Int, b: Int) => a < b))
+        println(isSorted(Array(1, 2, 3, 4, 5, 4), (a: Int, b: Int) => a < b))
         println(isSorted(Array('a', 'b', 'c'), (a: Char, b: Char) => a < b))
     }
 }
