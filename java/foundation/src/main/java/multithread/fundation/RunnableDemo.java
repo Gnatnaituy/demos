@@ -1,7 +1,5 @@
 package multithread.fundation;
 
-import java.util.concurrent.locks.AbstractQueuedSynchronizer;
-
 public class RunnableDemo {
 
     public static void main(String[] args) {
@@ -42,7 +40,5 @@ public class RunnableDemo {
             }
             System.out.println(threadName + " exiting.");
         }
-
-        AbstractQueuedSynchronizer
     }
 }
