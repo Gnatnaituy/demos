@@ -46,5 +46,6 @@ public class Counter {
         System.out.println(Counter.getCounter() + " " + (System.currentTimeMillis() - begin) + "ms");
 
         CalRunTime.calRunTime(() -> IntStream.rangeClosed(1, 100000000).parallel().forEach(o -> new Counter().wrong()));
+        CalRunTime.calRunTime(() -> IntStream.rangeClosed(1, 100000000).parallel().forEach(o -> new Counter().right()));
     }
 }

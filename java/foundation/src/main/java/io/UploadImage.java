@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Objects;
 
 public class UploadImage {
-    private static String[] imagePostfixes = {"jpg", "png", "jpeg", "gif", "bmp"};
+    private static final String[] imagePostfixes = {"jpg", "png", "jpeg", "gif", "bmp"};
 
     public static void main(String[] args) {
         String srcUrl = "C:\\Users\\Hasaker\\Desktop\\originImage";
