@@ -14,8 +14,9 @@ import java.util.Set;
 public class NIOServer {
 
     public static void main(String[] args) throws IOException {
-        // 1. serverSelector负责轮询是否有新的连接，服务端监测到新的连接之后，不再创建一个新的线程，
-        // 而是直接将新连接绑定到clientSelector上，这样就不用 IO 模型中 1w 个 while 循环在死等
+        // 1. serverSelector负责轮询是否有新的连接
+        // 服务端监测到新的连接之后，不再创建一个新的线程，而是直接将新连接绑定到clientSelector上
+        // 这样就不用 IO 模型中 1w 个 while 循环在死等
         Selector serverSelector = Selector.open();
         // 2. clientSelector负责轮询连接是否有数据可读
         Selector clientSelector = Selector.open();
@@ -72,8 +73,7 @@ public class NIOServer {
                                     // (3) 面向 Buffer
                                     clientChannel.read(byteBuffer);
                                     byteBuffer.flip();
-                                    System.out.println(
-                                            Charset.defaultCharset().newDecoder().decode(byteBuffer).toString());
+                                    System.out.println(Charset.defaultCharset().newDecoder().decode(byteBuffer).toString());
                                 } finally {
                                     keyIterator.remove();
                                     key.interestOps(SelectionKey.OP_READ);

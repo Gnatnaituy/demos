@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.logging.Logger;
 
 public class MySQLDataSource implements DataSource {
-    private LinkedList<Connection> dataSource = new LinkedList<>();
+    private final LinkedList<Connection> dataSource = new LinkedList<>();
 
     public MySQLDataSource() {
         for (int i = 0; i < 10; i++) {
