@@ -1,7 +1,6 @@
 package demo;
 
 import demo.utility.ConnectionFactory;
-import jdbc.DBUtilities;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -58,7 +57,6 @@ public class DataAccessServlet extends HttpServlet {
             e.printStackTrace();
         } finally {
             if (out != null) out.close();
-            DBUtilities.closeConnections(resultSet, statement, connection);
         }
     }
 }

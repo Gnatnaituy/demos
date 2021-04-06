@@ -7,11 +7,10 @@
     <parent>
         <groupId>com.hasaker</groupId>
         <artifactId>java</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
 
     <artifactId>zookeeper_demo</artifactId>
-    <version>1.0-SNAPSHOT</version>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
