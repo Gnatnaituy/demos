@@ -58,17 +58,7 @@ public class MySQLDataSource implements DataSource {
     }
 
     @Override
-    public ConnectionBuilder createConnectionBuilder() throws SQLException {
-        return null;
-    }
-
-    @Override
     public Logger getParentLogger() throws SQLFeatureNotSupportedException {
-        return null;
-    }
-
-    @Override
-    public ShardingKeyBuilder createShardingKeyBuilder() throws SQLException {
         return null;
     }
 
