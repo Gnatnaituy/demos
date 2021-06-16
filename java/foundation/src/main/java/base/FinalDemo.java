@@ -17,11 +17,12 @@ public class FinalDemo {
                 System.out.println(ch);
                 System.out.println(integer);
             }
-        };
+        }.innerTest();
     }
 
     public static void main(String[] args) {
         new FinalDemo().outerTest('H');
+        new FinalDemo().outerTest('A');
     }
 
     private class Inner {
