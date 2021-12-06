@@ -1,5 +1,7 @@
 package multithread.fundation;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
@@ -19,6 +21,7 @@ public class ForkJoinDemo extends RecursiveTask<Integer> {
     private final int end;
 
     public ForkJoinDemo(int start, int end) {
+        System.out.printf("ForkJoinDemo start: %s - end: %s%n", start, end);
         this.start = start;
         this.end = end;
     }

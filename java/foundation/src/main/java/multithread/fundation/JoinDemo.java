@@ -5,6 +5,9 @@ public class JoinDemo {
     public static void main(String[] args) {
         System.out.println(Thread.currentThread().getName() + " start running");
 
+
+        System.out.println("123+12312+11".replaceAll("\\+", ""));
+
         Thread thread1 = new Thread(new JoinThread("A"));
         Thread thread2 = new Thread(new JoinThread("B"));
         thread1.start();
