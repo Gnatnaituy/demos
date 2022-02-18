@@ -18,14 +18,13 @@
     </properties>
 
     <modules>
+        <module>common</module>
         <module>foundation</module>
         <module>servlet_demo</module>
         <module>spring_demo</module>
         <module>spring_boot_demo</module>
         <module>kafka_demo</module>
         <module>zookeeper_demo</module>
-        <module>spark_demo</module>
-        <module>tools</module>
     </modules>
 
     <dependencies>
@@ -34,6 +33,11 @@
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.7</version>
         </dependency>
     </dependencies>
 </project>

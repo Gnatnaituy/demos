@@ -18,9 +18,18 @@ public class MessageProducer2ndInterceptor implements ProducerInterceptor<String
 
     @Override
     public ProducerRecord<String, Message> onSend(ProducerRecord<String, Message> record) {
-        Message modifiedMessage = Message.builder().title("modified twice: " + record.value().getTitle())
-                .content("modified twice: " + record.value().getContent()).build();
-        return new ProducerRecord<>(record.topic(), record.partition(), record.timestamp(), record.key(), modifiedMessage, record.headers());
+        Message modifiedMessage = Message.builder()
+                .title("modified twice: " + record.value().getTitle())
+                .content("modified twice: " + record.value().getContent())
+                .build();
+
+        return new ProducerRecord<>(
+                record.topic(),
+                record.partition(),
+                record.timestamp(),
+                record.key(),
+                modifiedMessage,
+                record.headers());
     }
 
     @Override

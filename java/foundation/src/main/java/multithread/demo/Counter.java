@@ -1,7 +1,7 @@
 package multithread.demo;
 
+import com.ravooo.common.tools.CalRunTime;
 import lombok.Getter;
-import ravooo.tools.CalRunTime;
 
 import java.util.ArrayList;
 import java.util.List;

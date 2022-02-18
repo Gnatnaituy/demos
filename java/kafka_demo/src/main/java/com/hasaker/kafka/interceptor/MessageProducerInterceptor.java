@@ -18,9 +18,18 @@ public class MessageProducerInterceptor implements ProducerInterceptor<String, M
 
     @Override
     public ProducerRecord<String, Message> onSend(ProducerRecord<String, Message> record) {
-        Message modifiedMessage = Message.builder().title("modified: " + record.value().getTitle())
-                .content("modified: " + record.value().getContent()).build();
-        return new ProducerRecord<>(record.topic(), record.partition(), record.timestamp(), record.key(), modifiedMessage, record.headers());
+        Message modifiedMessage = Message.builder()
+                .title("modified: " + record.value().getTitle())
+                .content("modified: " + record.value().getContent())
+                .build();
+
+        return new ProducerRecord<>(
+                record.topic(),
+                record.partition(),
+                record.timestamp(),
+                record.key(),
+                modifiedMessage,
+                record.headers());
     }
 
     @Override

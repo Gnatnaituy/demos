@@ -38,5 +38,7 @@
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.2.7" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.2.7" level="project" />
   </component>
 </module>
