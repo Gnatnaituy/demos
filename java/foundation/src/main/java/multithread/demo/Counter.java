@@ -1,11 +1,10 @@
 package multithread.demo;
 
-import com.ravooo.common.tools.CalRunTime;
-import lombok.Getter;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.IntStream;
+
+import com.ravooo.common.tools.CalRunTime;
+
+import lombok.Getter;
 
 public class Counter {
 
@@ -13,8 +12,6 @@ public class Counter {
     private static int counter = 0;
 
     private static final Object locker = new Object();
-
-    private List<Integer> data = new ArrayList<>();
 
     public static void reset() {
         counter = 0;
@@ -44,8 +41,16 @@ public class Counter {
         Counter.reset();
         IntStream.rangeClosed(1, 100000000).parallel().forEach(o -> new Counter().right());
         System.out.println(Counter.getCounter() + " " + (System.currentTimeMillis() - begin) + "ms");
+        CalRunTime.calRunTime(System.out::println);
 
-        CalRunTime.calRunTime(() -> IntStream.rangeClosed(1, 100000000).parallel().forEach(o -> new Counter().wrong()));
-        CalRunTime.calRunTime(() -> IntStream.rangeClosed(1, 100000000).parallel().forEach(o -> new Counter().right()));
+        CalRunTime.calRunTime(() -> {
+            Counter.reset();
+            IntStream.rangeClosed(1, 100000000).parallel().forEach(o -> new Counter().wrong());
+        });
+
+        CalRunTime.calRunTime(() -> {
+            Counter.reset();
+            IntStream.rangeClosed(1, 100000000).parallel().forEach(o -> new Counter().right());
+        });
     }
 }
