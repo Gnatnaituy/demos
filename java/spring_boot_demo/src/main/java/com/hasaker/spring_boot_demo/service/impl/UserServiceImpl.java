@@ -3,11 +3,12 @@ package com.hasaker.spring_boot_demo.service.impl;
 import com.hasaker.spring_boot_demo.bean.User;
 import com.hasaker.spring_boot_demo.dao.UserDao;
 import com.hasaker.spring_boot_demo.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Slf4j
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
