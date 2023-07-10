@@ -3,7 +3,7 @@ from datetime import datetime
 import psutil
 import os
 
-FILE_PATH = '/Users/ravooo/Code/Ravooo/demos/python/whisper/audio/time_es/'
+FILE_PATH = '/Users/ravooo/Code/Ravooo/demos/python/whisper/audio/accuracy_es/'
 
 def transcribe_file(file): 
     file_name = FILE_PATH + file
@@ -17,7 +17,7 @@ def transcribe_file(file):
         if (mem_showed == False):
             print("Memory: %.4fGB" % (psutil.Process(os.getpid()).memory_info().rss / 1024 / 1024 / 1024))
             mem_showed = True
-        # print("[%.2fs -> %.2fs] %s" % (segment.start, segment.end, segment.text))
+        print("[%.2fs -> %.2fs] %s" % (segment.start, segment.end, segment.text))
 
     print("Time: %ss" % (datetime.now() - start_time))
 

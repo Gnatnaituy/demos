@@ -46,11 +46,11 @@ def audio_to_text(mp3_file):
 
     # merge channels and sort segments
     for s in left_result['segments']:
-        s['channel'] = 'L'
+        s['channel'] = '催员'
     for s in right_result['segments']:
-        s['channel'] = 'R'
+        s['channel'] = '客户'
     all_segments = left_result['segments'] + right_result['segments']
-    all_segments.sort(key=lambda s: s['start'])
+    all_segments.sort(key=lambda s: s['end'])
 
     # output merged result
     print_segments(all_segments)
@@ -68,6 +68,6 @@ def print_segments(segments):
 
 if __name__ == "__main__":
     for i in range(1, 2):
-        input_file = "/Users/ravooo/Downloads/speed_zh/zh_00{}.mp3".format(i)
+        input_file = "/Users/ravooo/Downloads/aaaaa.mp3"
         audio_to_text(input_file)
-        print('\n\n')
+        print('\n')
