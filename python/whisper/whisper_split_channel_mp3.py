@@ -67,8 +67,8 @@ def print_segments(segments):
 
 
 if __name__ == "__main__":
-    FILE_PATH = '/Users/ravooo/Downloads/spanish/'
+    FILE_PATH = './audio/kn_es/'
     for file in os.listdir(FILE_PATH):
-        if file.endswith("wav"):
-            audio_to_text(file)
+        if file.endswith("mp3"):
+            audio_to_text(FILE_PATH + file)
             print('\n')
