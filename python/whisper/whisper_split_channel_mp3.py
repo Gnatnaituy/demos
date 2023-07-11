@@ -36,12 +36,12 @@ def audio_to_text(mp3_file):
 
     # recognize left channel
     start_time = datetime.now()
-    left_result = model.transcribe(left_channel, fp16=False, language='zh')
+    left_result = model.transcribe(left_channel, fp16=False, language='es')
     print("Left channel recognize time:", datetime.now() - start_time)
 
     # recognize right channel
     start_time = datetime.now()
-    right_result = model.transcribe(right_channel, fp16=False, language='zh')
+    right_result = model.transcribe(right_channel, fp16=False, language='es')
     print("Right channel recognize time:", datetime.now() - start_time)
 
     # merge channels and sort segments
@@ -67,7 +67,8 @@ def print_segments(segments):
 
 
 if __name__ == "__main__":
-    for i in range(1, 2):
-        input_file = "/Users/ravooo/Downloads/aaaaa.mp3"
-        audio_to_text(input_file)
-        print('\n')
+    FILE_PATH = '/Users/ravooo/Downloads/spanish/'
+    for file in os.listdir(FILE_PATH):
+        if file.endswith("wav"):
+            audio_to_text(file)
+            print('\n')
