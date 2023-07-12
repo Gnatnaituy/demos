@@ -32,7 +32,7 @@ def audio_to_text(mp3_file):
     # init file and model
     wav_file = mp3_to_wav(mp3_file)
     left_channel, right_channel = split_channel(wav_file)
-    model = whisper.load_model("medium")
+    model = whisper.load_model("large")
 
     # recognize left channel
     start_time = datetime.now()
@@ -53,7 +53,8 @@ def audio_to_text(mp3_file):
     all_segments.sort(key=lambda s: s['end'])
 
     # output merged result
-    print_segments(all_segments)
+    # print_segments(left_result['segments'])
+    # print_segments(right_result['segments'])
 
     # remove temp files
     os.remove(wav_file)
@@ -67,8 +68,8 @@ def print_segments(segments):
 
 
 if __name__ == "__main__":
-    FILE_PATH = '/Users/ravooo/Downloads/spanish/'
+    FILE_PATH = './audio/kn_es/'
     for file in os.listdir(FILE_PATH):
-        if file.endswith("wav"):
+        if file.endswith("mp3"):
             audio_to_text(file)
             print('\n')

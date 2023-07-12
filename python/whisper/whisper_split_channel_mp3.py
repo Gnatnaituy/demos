@@ -49,11 +49,13 @@ def audio_to_text(mp3_file):
         s['channel'] = '催员'
     for s in right_result['segments']:
         s['channel'] = '客户'
-    all_segments = left_result['segments'] + right_result['segments']
-    all_segments.sort(key=lambda s: s['end'])
+    # all_segments = left_result['segments'] + right_result['segments']
+    # all_segments.sort(key=lambda s: s['end'])
 
     # output merged result
-    print_segments(all_segments)
+    print_segments(left_result['segments'])
+    print_segments(right_result['segments'])
+    # print_segments(all_segments)
 
     # remove temp files
     os.remove(wav_file)
