@@ -12,15 +12,11 @@ __pycache__/
 .DS_Store
 *.py[cod]
 *$py.class
-.idea/
 migrations/
 compiler/
 out/
-*.yml
 .python-version
-.vscode/
 cmake-build-debug/
-CMakeLists.txt
 
 # C extensions
 *.so
