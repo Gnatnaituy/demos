@@ -3,12 +3,12 @@ from datetime import datetime
 import psutil
 import os
 
-FILE_PATH = '/root/Code/demos/python/whisper/audio/time_es/'
+#FILE_PATH = '/root/Code/demos/python/whisper/audio/time_es/'
 
 def transcribe_file(file): 
-    file_name = FILE_PATH + file
+    file_name = file
     start_time = datetime.now()
-    model = WhisperModel('medium', device="cpu", compute_type="float32")
+    model = WhisperModel('large-v2', device="cpu", compute_type="float32")
     print("File: %s" % file)
     segments, info = model.transcribe(file_name, beam_size=5, language='es')
 
@@ -23,7 +23,8 @@ def transcribe_file(file):
 
 
 if __name__ == "__main__":
-    for file in os.listdir(FILE_PATH):
-        if file.endswith("mp3"):
-            transcribe_file(file=file)
-            print('\n')
+    transcribe_file('aaa')
+    #for file in os.listdir(FILE_PATH):
+    #    if file.endswith("mp3"):
+    #        transcribe_file(file=file)
+    #        print('\n')
